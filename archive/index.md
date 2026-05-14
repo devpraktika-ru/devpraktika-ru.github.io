@@ -3,7 +3,7 @@ layout: default
 title: "Архив"
 ---
 
-{% assign outgoing_events = site.events | where_exp: "event", "event.past == false" | sort: "date" %}
+{% assign outgoing_events = site.events | where_exp: "event", "event.past == true" | sort: "at" %}
 
 {% if outgoing_events.size == 0 %}
   <p class="text-muted">Нет прошедших событий.</p>
@@ -16,7 +16,7 @@ title: "Архив"
           <a href="{{ event.url | relative_url }}">{{ course.title | default: event.course }}</a>
         </p>
         <p class="mb-1 text-muted small">
-          {{ event.date | date: "%d.%m.%Y %H:%M" }}
+          {{ event.at | date: "%d.%m.%Y %H:%M" }}
         </p>
         <p class="mb-0">
           {% if event.educators %}
