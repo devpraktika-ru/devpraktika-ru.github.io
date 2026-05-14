@@ -11,7 +11,7 @@ collections:
     permalink: /courses/:title/
   events:
     output: true
-    permalink: /events/:year/:month/:day/:title/
+    permalink: /events/:year/:month/:day/:course/
 
 defaults:
   - scope:
