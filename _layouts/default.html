@@ -15,67 +15,73 @@
     <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
         <div class="container">
-          <a class="navbar-brand fw-semibold" href="{% link index.md %}">[Logo]</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#siteNavbar"
-            aria-controls="siteNavbar"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="siteNavbar">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a
-                  class="nav-link{% if page.url contains 'about' %} active{% endif %}"
-                  href="{% link about.md %}"
-                  {% if page.url contains 'about' %}aria-current="page"{% endif %}
-                  >About</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link{% if page.url contains '/educators' %} active{% endif %}"
-                  href="{% link educators/index.md %}"
-                  {% if page.url contains '/educators' %}aria-current="page"{% endif %}
-                  >Educators</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link{% if page.url contains '/courses' %} active{% endif %}"
-                  href="{% link courses/index.md %}"
-                  {% if page.url contains '/courses' %}aria-current="page"{% endif %}
-                  >Courses</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link{% if page.url contains '/schedule' %} active{% endif %}"
-                  href="{{ '/schedule/' | relative_url }}"
-                  {% if page.url contains '/schedule' %}aria-current="page"{% endif %}
-                  >Schedule</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link{% if page.url contains '/archive' %} active{% endif %}"
-                  href="{{ '/archive/' | relative_url }}"
-                  {% if page.url contains '/archive' %}aria-current="page"{% endif %}
-                  >Archive</a
-                >
-              </li>
-            </ul>
-            <div class="navbar-text small text-body-secondary ms-lg-3">
-              <span class="d-block d-lg-inline">[Phone]</span>
-              <span class="d-none d-lg-inline px-1">·</span>
-              <span class="d-block d-lg-inline">[Email]</span>
-              <span class="d-none d-lg-inline px-1">·</span>
-              <span class="d-block d-lg-inline">[Telegram]</span>
+          <div class="row justify-content-center w-100">
+            <div
+              class="col-12 col-xl-10 col-xxl-8 d-flex flex-wrap align-items-center justify-content-between"
+            >
+              <a class="navbar-brand fw-semibold" href="{% link index.md %}">[Logo]</a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#siteNavbar"
+                aria-controls="siteNavbar"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="siteNavbar">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link{% if page.url contains 'about' %} active{% endif %}"
+                      href="{% link about.md %}"
+                      {% if page.url contains 'about' %}aria-current="page"{% endif %}
+                      >About</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link{% if page.url contains '/educators' %} active{% endif %}"
+                      href="{% link educators/index.md %}"
+                      {% if page.url contains '/educators' %}aria-current="page"{% endif %}
+                      >Educators</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link{% if page.url contains '/courses' %} active{% endif %}"
+                      href="{% link courses/index.md %}"
+                      {% if page.url contains '/courses' %}aria-current="page"{% endif %}
+                      >Courses</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link{% if page.url contains '/schedule' %} active{% endif %}"
+                      href="{{ '/schedule/' | relative_url }}"
+                      {% if page.url contains '/schedule' %}aria-current="page"{% endif %}
+                      >Schedule</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link{% if page.url contains '/archive' %} active{% endif %}"
+                      href="{{ '/archive/' | relative_url }}"
+                      {% if page.url contains '/archive' %}aria-current="page"{% endif %}
+                      >Archive</a
+                    >
+                  </li>
+                </ul>
+                <div class="navbar-text small text-body-secondary ms-lg-3">
+                  <span class="d-block d-lg-inline">[Phone]</span>
+                  <span class="d-none d-lg-inline px-1">·</span>
+                  <span class="d-block d-lg-inline">[Email]</span>
+                  <span class="d-none d-lg-inline px-1">·</span>
+                  <span class="d-block d-lg-inline">[Telegram]</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -90,7 +96,11 @@
 
     <footer class="border-top bg-light mt-auto py-3">
       <div class="container">
-        <p class="text-muted small mb-0">[Copyright placeholder]</p>
+        <div class="row justify-content-center">
+          <div class="col-12 col-xl-10 col-xxl-8 text-center">
+            <p class="text-muted small mb-0">[Copyright placeholder]</p>
+          </div>
+        </div>
       </div>
     </footer>
 
