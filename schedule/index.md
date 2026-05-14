@@ -3,7 +3,7 @@ layout: default
 title: "Расписание"
 ---
 
-{% assign upcoming_events = site.events | where_exp: "event", "event.past == false" | sort: "at" %}
+{% assign upcoming_events = site.events | where_exp: "event", "event.past == false" | sort: "date" %}
 
 {% if upcoming_events.size == 0 %}
   <p class="text-muted">Нет предстоящих событий.</p>
@@ -16,7 +16,7 @@ title: "Расписание"
           <a href="{{ event.url | relative_url }}">{{ course.title | default: event.course }}</a>
         </p>
         <p class="mb-1 text-muted small">
-          {{ event.at | date: "%d.%m.%Y %H:%M" }}
+          {{ event.date | date: "%d.%m.%Y %H:%M" }}
           {% if event.price != nil %}· {{ event.price }}{% endif %}
         </p>
         <p class="mb-0">

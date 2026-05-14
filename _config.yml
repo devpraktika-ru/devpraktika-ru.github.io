@@ -1,6 +1,7 @@
 title: devpraktika.ru
 lang: ru
 url: https://devpraktika.ru
+future: true
 
 collections:
   educators:
