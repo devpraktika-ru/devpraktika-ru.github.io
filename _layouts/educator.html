@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+<h1>{{ page.givenName }} {{ page.familyName }}</h1>
+
+<div class="contacts">
+  {% if page.github %}
+    <a href="https://github.com/{{ page.github }}/">GitHub</a>
+  {% endif %}
+  {% if page.telegram %}
+    <a href="https://t.me/{{ page.telegram }}">Telegram</a>
+  {% endif %}
+</div>
+
+<div>
+  {{ content }}
+</div>

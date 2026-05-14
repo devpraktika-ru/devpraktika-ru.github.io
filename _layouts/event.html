@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+{{ page.date | date: "%d.%m.%Y" }}
+
+{{ page.date | date: "%H:%M" }}
+
+{{ page.content | markdownify }}
+
+{% if page.past == true %}
+  Оценка: {% if page.mark %}{{ page.mark }}{% else %}?{% endif %}
+{% else if page.past == false %}
+  Цена: {{ page.price }}
+  Записаться
+{% endif %}

@@ -1,0 +1,26 @@
+title: devpraktika.ru
+lang: ru
+url: https://devpraktika.ru
+
+collections:
+  educators:
+    output: true
+    permalink: /educators/:title/
+  courses:
+    output: true
+    permalink: /courses/:title/
+  events:
+    output: true
+    permalink: /events/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: "educators"
+    values:
+      layout: "educator"
+  - scope:
+      path: ""
+      type: "courses"
+    values:
+      layout: "course"
