@@ -3,7 +3,7 @@ layout: default
 title: "Расписание"
 ---
 
-{% assign upcoming_events = site.events | where_exp: "event", "event.past == false" | sort: "date" %}
+{% assign upcoming_events = site.events | where_exp: "event", "event.past == true" | sort: "date" %}
 
 {% if upcoming_events.size == 0 %}
   <p class="text-muted">Нет предстоящих событий.</p>

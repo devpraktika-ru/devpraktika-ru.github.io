@@ -6,3 +6,5 @@ course: architecture-workshop
 educators:
   - anton-stekanov
 ---
+
+Предстоящий курс ого-го!
