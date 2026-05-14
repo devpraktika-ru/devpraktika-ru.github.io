@@ -11,7 +11,7 @@ collections:
     permalink: /courses/:title/
   events:
     output: true
-    permalink: /events/:title/
+    permalink: /events/:year/:month/:day/:title/
 
 defaults:
   - scope:
@@ -24,3 +24,8 @@ defaults:
       type: "courses"
     values:
       layout: "course"
+  - scope:
+      path: ""
+      type: "events"
+    values:
+      layout: "event"

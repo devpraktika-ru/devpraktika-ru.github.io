@@ -7,7 +7,7 @@ title: "Курсы"
   {% for course in site.courses %}
     <li>
       <a href="{{ course.url | relative_url }}">
-        {{ educator.title }}
+        {{ course.title }}
       </a>
     </li>
   {% endfor %}
