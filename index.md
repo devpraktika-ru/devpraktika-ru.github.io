@@ -1,12 +1,13 @@
 ---
-layout: main
+layout: default
+title: dev⬤praktika
 ---
 
 {% assign upcoming_events = site.events | where_exp: "event", "event.past == false" | sort: "date" %}
 
 <div class="row g-4">
   <div class="col-12 col-lg-8">
-    <h1 class="h2 mb-3">dev•praktika</h1>
+    <h1 class="h2 mb-3">dev⬤praktika</h1>
     <p>
       Практические занятия и воркшопы по разработке, архитектуре и командной работе.
       Выберите ближайшее событие в расписании справа или перейдите в разделы с курсами и ведущими.
