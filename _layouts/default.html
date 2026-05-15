@@ -38,7 +38,7 @@
                       class="nav-link{% if page.url contains 'about' %} active{% endif %}"
                       href="{% link about.md %}"
                       {% if page.url contains 'about' %}aria-current="page"{% endif %}
-                      >About</a
+                      >О нас</a
                     >
                   </li>
                   <li class="nav-item">
@@ -46,7 +46,7 @@
                       class="nav-link{% if page.url contains '/educators' %} active{% endif %}"
                       href="{% link educators/index.md %}"
                       {% if page.url contains '/educators' %}aria-current="page"{% endif %}
-                      >Educators</a
+                      >Ведущие</a
                     >
                   </li>
                   <li class="nav-item">
@@ -54,7 +54,7 @@
                       class="nav-link{% if page.url contains '/courses' %} active{% endif %}"
                       href="{% link courses/index.md %}"
                       {% if page.url contains '/courses' %}aria-current="page"{% endif %}
-                      >Courses</a
+                      >Курсы</a
                     >
                   </li>
                   <li class="nav-item">
@@ -62,7 +62,7 @@
                       class="nav-link{% if page.url contains '/schedule' %} active{% endif %}"
                       href="{{ '/schedule/' | relative_url }}"
                       {% if page.url contains '/schedule' %}aria-current="page"{% endif %}
-                      >Schedule</a
+                      >Расписание</a
                     >
                   </li>
                   <li class="nav-item">
@@ -70,16 +70,16 @@
                       class="nav-link{% if page.url contains '/archive' %} active{% endif %}"
                       href="{{ '/archive/' | relative_url }}"
                       {% if page.url contains '/archive' %}aria-current="page"{% endif %}
-                      >Archive</a
+                      >Архив</a
                     >
                   </li>
                 </ul>
                 <div class="navbar-text small text-body-secondary ms-lg-3">
-                  <span class="d-block d-lg-inline">[Phone]</span>
+                  <span class="d-block d-lg-inline">📞 +7 (999) 999-99-99</span>
                   <span class="d-none d-lg-inline px-1">·</span>
-                  <span class="d-block d-lg-inline">[Email]</span>
+                  <span class="d-block d-lg-inline">🖂 info@devpraktika.ru</span>
                   <span class="d-none d-lg-inline px-1">·</span>
-                  <span class="d-block d-lg-inline">[Telegram]</span>
+                  <span class="d-block d-lg-inline">🗨 @devpraktika</span>
                 </div>
               </div>
             </div>
@@ -98,7 +98,7 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12 col-xl-10 col-xxl-8 text-center">
-            <p class="text-muted small mb-0">[Copyright placeholder]</p>
+            <p class="text-muted small mb-0">@copy; dev•praktika 2025–{{ now | date: "%Y" }}</p>
           </div>
         </div>
       </div>
