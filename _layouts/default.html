@@ -10,6 +10,12 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <style>
+      .site-logo {
+        width: clamp(40px, 3vw, 56px);
+        height: auto;
+      }
+    </style>
   </head>
   <body class="d-flex flex-column min-vh-100">
     <header>
@@ -20,8 +26,9 @@
               class="col-12 col-xl-10 col-xxl-8 d-flex flex-wrap align-items-center justify-content-between"
             >
               <a class="navbar-brand fw-semibold" href="{% link index.md %}"><img
-                width="128"
-                height="128"
+                class="site-logo"
+                width="56"
+                height="56"
                 alt="dev•praktika"
                 src="https://github.com/user-attachments/assets/616632f8-3b81-400a-8b2f-363a1a7e5a59"
               /></a>
