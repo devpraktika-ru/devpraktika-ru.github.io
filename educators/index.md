@@ -7,7 +7,7 @@ title: "Ведущие"
 <ul>
   {% for educator in sorted_educators %}
     <li>
-      <img src="educator.thumbnail" alt="{{ educator.url | relative_url }}" />
+      <img src="{{ educator.thumbnail}}" alt="{{ educator.givenName }} {{ educator.familyName }}" />
       <a href="{{ educator.url | relative_url }}">
         {{ educator.givenName }} {{ educator.familyName }}
       </a>
