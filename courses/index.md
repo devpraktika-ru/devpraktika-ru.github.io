@@ -9,6 +9,7 @@ title: "Курсы"
       <a href="{{ course.url | relative_url }}">
         {{ course.title }}
       </a>
+      <p><em>{{ course.description }}</em></p>
     </li>
   {% endfor %}
 </ul>

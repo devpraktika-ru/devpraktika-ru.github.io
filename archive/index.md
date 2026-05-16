@@ -3,6 +3,8 @@ layout: default
 title: "Архив"
 ---
 
+Завершённые курсы.
+
 {% assign outgoing_events = site.events | where_exp: "event", "event.past == true" | sort: "date" %}
 
 {% if outgoing_events.size == 0 %}

@@ -3,6 +3,8 @@ layout: default
 title: "Расписание"
 ---
 
+Предстоящие курсы.
+
 {% assign upcoming_events = site.events | where_exp: "event", "event.past == false" | sort: "date" %}
 
 {% if upcoming_events.size == 0 %}
