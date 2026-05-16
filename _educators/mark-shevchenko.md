@@ -3,6 +3,8 @@ givenName: Марк
 familyName: Шевченко
 github: markshevchenko
 telegram: markshevchenko
+thumbnail: "https://github.com/user-attachments/assets/97541145-b703-4f1f-9b7b-dd42077df528"
+image: "https://github.com/user-attachments/assets/3142c91e-f88f-4ef4-afe4-3f922ffc34ee"
 description: "Стаж 30+ лет. Языки: Go, C#, F#, Rust."
 ---
 
