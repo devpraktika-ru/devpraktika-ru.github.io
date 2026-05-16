@@ -3,8 +3,8 @@ givenName: Антон
 familyName: Стеканов
 github: anton0xf
 telegram: anton0xf
-# thumbnail:
-# image:
+thumbnail: "https://github.com/user-attachments/assets/17fc479b-5d0c-4036-9ab6-fafacbc1629d"
+image: "https://github.com/user-attachments/assets/318cd753-d7bc-45a3-9f72-e25d1329d4be"
 description: "Стаж 20 лет. Языки: Java, Scala, Coq."
 ---
 
