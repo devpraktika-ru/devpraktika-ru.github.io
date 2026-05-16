@@ -13,4 +13,4 @@ title: Готовим технический доклад
 * Репетируем
 * Выступаем
 
-* [Марк Шевченко]({% link ../educators/mark-shevchenko.md %})
+* [Марк Шевченко]({% link _educators/mark-shevchenko.md %})

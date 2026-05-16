@@ -28,4 +28,4 @@ description: "Стаж 20 лет. Языки: Java, Scala, Coq."
 Записал многосерийный воркшоп по формальному доказательству программ на языке Coq ([vkvideo](https://vkvideo.ru/playlist/-215542858_8)).
 
 Ведёт:
-* [Архитектурный воркшоп]({% link ../courses/architecture-workshop.md %})
+* [Архитектурный воркшоп]({% link _courses/architecture-workshop.md %})

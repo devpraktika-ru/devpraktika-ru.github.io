@@ -34,5 +34,5 @@ description: |
 Ждём программистов уровня middle и senior, а также начинающих архитекторов.
 
 Ведущие:
-* [Антон Стеканов]({% link ../educators/anton-stekanov.md %})
-* [Марк Шевченко]({% link ../educators/mark-shevchenko.md %})
+* [Антон Стеканов]({% link _educators/anton-stekanov.md %})
+* [Марк Шевченко]({% link _educators/mark-shevchenko.md %})

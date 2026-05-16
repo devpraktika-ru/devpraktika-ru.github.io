@@ -29,6 +29,6 @@ description: "Стаж 30+ лет. Языки: Go, C#, F#, Rust."
 Записал курсы «Пишем интернет-магазин на C#» ([vkvideo](https://vkvideo.ru/playlist/-215542858_1)) и «Адресная арифметика» ([vkvideo](https://vkvideo.ru/playlist/-215542858_10)).
 
 Ведёт:
-* [Архитектурный воркшоп]({% link ../courses/architecture-workshop.md %})
-* [Код-ретрит]({% link ../courses/code-retreat.md %})
-* [Готовим технический доклад]({% link ../courses/working-on-tech-talk.md %})
+* [Архитектурный воркшоп]({% link _courses/architecture-workshop.md %})
+* [Код-ретрит]({% link _courses/code-retreat.md %})
+* [Готовим технический доклад]({% link _courses/working-on-tech-talk.md %})
