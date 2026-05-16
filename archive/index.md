@@ -23,6 +23,7 @@ title: "Архив"
             {% for educator_slug in event.educators %}
               {% assign educator = site.educators | where: "slug", educator_slug | first %}
               {% if educator %}
+                <img src="{{ educator.thumbnail }}" alt="{{ educator.givenName }} {{ educator.familyName }}" />
                 <span>{{ educator.givenName }} {{ educator.familyName }}</span>{% unless forloop.last %}, {% endunless %}
               {% endif %}
             {% endfor %}

@@ -11,6 +11,10 @@ layout: default
 
 <h1>{{ page.givenName }} {{ page.familyName }}</h1>
 
+{% if page.image %}
+<img src="{{ page.image }}" alt="{{ page.givenName }} {{ page.familyName }}" />
+{% endif %}
+
 <div class="contacts">
   {% if page.github %}
     <a href="https://github.com/{{ page.github }}/">GitHub</a>
