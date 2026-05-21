@@ -1,5 +1,6 @@
 ---
 title: Архитектурный воркшоп
+id: arc
 # thumbnail:
 # image:
 description: |
@@ -33,6 +34,7 @@ description: |
 
 Ждём программистов уровня middle и senior, а также начинающих архитекторов.
 
-Ведущие:
+## Ведущие
+
 * [Антон Стеканов]({% link _educators/anton-stekanov.md %})
 * [Марк Шевченко]({% link _educators/mark-shevchenko.md %})

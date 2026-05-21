@@ -1,5 +1,6 @@
 ---
 title: Готовим технический доклад
+id: wtt
 # thumbnail:
 # image:
 description: |
@@ -15,5 +16,7 @@ description: |
 * Структурируем
 * Репетируем
 * Выступаем
+
+## Ведущие
 
 * [Марк Шевченко]({% link _educators/mark-shevchenko.md %})
