@@ -10,12 +10,6 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <style>
-      .site-logo {
-        width: clamp(40px, 3vw, 64px);
-        height: auto;
-      }
-    </style>
   </head>
   <body class="d-flex flex-column min-vh-100">
     <header>
@@ -26,10 +20,10 @@
               class="col-12 col-xl-10 col-xxl-8 d-flex flex-wrap align-items-center justify-content-between"
             >
               <a class="navbar-brand fw-semibold" href="{% link index.md %}"><img
-                class="site-logo"
-                width="56"
-                height="56"
-                alt="dev•praktika"
+                style="width: clamp(40px, 3vw, 64px); height: auto"
+                width="64"
+                height="64"
+                alt="dev Ⴥ praktika"
                 src="https://github.com/user-attachments/assets/72e284bc-2931-4c77-928e-ab788b8e7d30"
               /></a>
               <button
@@ -49,8 +43,8 @@
                     <a
                       class="nav-link{% if page.url contains 'about' %} active{% endif %}"
                       href="{% link about.md %}"
-                      {% if page.url contains 'about' %}aria-current="page"{% endif %}
-                      >О нас</a
+                      {% if page.url contains 'approach' %}aria-current="page"{% endif %}
+                      >Подход</a
                     >
                   </li>
                   <li class="nav-item">
@@ -108,7 +102,7 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12 col-xl-10 col-xxl-8 text-center">
-            <p class="text-muted small mb-0">&copy; dev•praktika 2025–{{ "now" | date: "%Y" }}</p>
+            <p class="text-muted small mb-0">&copy; dev Ⴥ praktika 2025–{{ "now" | date: "%Y" }}</p>
           </div>
         </div>
       </div>
