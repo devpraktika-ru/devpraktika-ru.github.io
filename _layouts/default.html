@@ -60,7 +60,7 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
                     <a
-                      class="nav-link{% if page.url contains 'approach' %} active{% endif %}"
+                      class="fs-6 nav-link{% if page.url contains 'approach' %} active{% endif %}"
                       href="{% link approach.md %}"
                       {% if page.url contains 'approach' %}aria-current="page"{% endif %}
                       >Подход</a
@@ -68,7 +68,7 @@
                   </li>
                   <li class="nav-item">
                     <a
-                      class="nav-link{% if page.url contains 'educators' %} active{% endif %}"
+                      class="fs-6 nav-link{% if page.url contains 'educators' %} active{% endif %}"
                       href="{% link educators/index.md %}"
                       {% if page.url contains 'educators' %}aria-current="page"{% endif %}
                       >Ведущие</a
@@ -76,24 +76,24 @@
                   </li>
                   <li class="nav-item">
                     <a
-                      class="nav-link{% if page.url contains 'workshops' %} active{% endif %}"
+                      class="fs-6 nav-link{% if page.url contains 'workshops' %} active{% endif %}"
                       href="{% link workshops/index.md %}"
                       {% if page.url contains 'workshops' %}aria-current="page"{% endif %}
-                      >Воркшопы</a
+                      >Практикумы</a
                     >
                   </li>
                   <li class="nav-item">
                     <a
-                      class="nav-link{% if page.url contains 'schedule' %} active{% endif %}"
-                      href="{{% link schedule/index.md %}}"
+                      class="fs-6 nav-link{% if page.url contains 'schedule' %} active{% endif %}"
+                      href="{% link schedule/index.md %}"
                       {% if page.url contains 'schedule' %}aria-current="page"{% endif %}
                       >Расписание</a
                     >
                   </li>
                   <li class="nav-item">
                     <a
-                      class="nav-link{% if page.url contains 'archive' %} active{% endif %}"
-                      href="{{% link archive/index.md %}}"
+                      class="fs-6 nav-link{% if page.url contains 'archive' %} active{% endif %}"
+                      href="{% link archive/index.md %}"
                       {% if page.url contains 'archive' %}aria-current="page"{% endif %}
                       >Архив</a
                     >
@@ -113,8 +113,12 @@
     </header>
 
     <main class="flex-grow-1 overflow-auto">
-      <div class="container-xxl">
-        {{ content }}
+      <div class="row justify-content-center w-100">
+        <div class="col-12 col-xl-10 col-xxl-8 d-flex flex-wrap align-items-center justify-content-between">
+          <div class="container-xxl">
+            {{ content }}
+          </div>
+        </div>
       </div>
     </main>
 

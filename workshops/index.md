@@ -1,10 +1,10 @@
 ---
 layout: default
-title: "Воркшопы"
+title: "Практикумы"
 ---
 
 <ul>
-  {% for workshop in site.workshop %}
+  {% for workshop in site.workshops %}
     <li>
       <a href="{{ workshop.url | relative_url }}">
         {{ workshop.title }}
