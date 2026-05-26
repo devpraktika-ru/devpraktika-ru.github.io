@@ -7,9 +7,9 @@ collections:
   educators:
     output: true
     permalink: /educators/:title/
-  courses:
+  workshops:
     output: true
-    permalink: /courses/:title/
+    permalink: /workshops/:title/
   events:
     output: true
     permalink: /events/:name/
@@ -22,9 +22,9 @@ defaults:
       layout: "educator"
   - scope:
       path: ""
-      type: "courses"
+      type: "workshops"
     values:
-      layout: "course"
+      layout: "workshop"
   - scope:
       path: ""
       type: "events"

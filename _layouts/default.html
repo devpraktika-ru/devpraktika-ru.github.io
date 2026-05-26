@@ -10,21 +10,40 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+  <style>
+    body {
+      background-color: #EEF8FF;
+    }
+
+    header {
+      background-color: #856aff;
+      color: white;
+      padding: 16px;
+      border-radius: 0 0 16px 16px;
+      margin: 0 16px 16px 16px;
+    }
+
+    footer {
+      background-color: black;
+      color: white;
+      padding: 16px;
+      border-radius: 16px 16px 0 0;
+      margin: 16px 16px 0 16px;
+    }
+  </style>
   </head>
   <body class="d-flex flex-column min-vh-100">
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-        <div class="container">
+      <div class="container-xxl">
+        <nav class="navbar navbar-expand-lg navbar-dark">
           <div class="row justify-content-center w-100">
-            <div
-              class="col-12 col-xl-10 col-xxl-8 d-flex flex-wrap align-items-center justify-content-between"
-            >
+            <div class="col-12 col-xl-10 col-xxl-8 d-flex flex-wrap align-items-center justify-content-between">
               <a class="navbar-brand fw-semibold" href="{% link index.md %}"><img
                 style="width: clamp(40px, 3vw, 64px); height: auto"
                 width="64"
                 height="64"
-                alt="dev Ⴥ praktika"
-                src="https://github.com/user-attachments/assets/72e284bc-2931-4c77-928e-ab788b8e7d30"
+                alt="dev praktika"
+                src="devpraktika-logo.png"
               /></a>
               <button
                 class="navbar-toggler"
@@ -49,65 +68,78 @@
                   </li>
                   <li class="nav-item">
                     <a
-                      class="nav-link{% if page.url contains '/educators' %} active{% endif %}"
+                      class="nav-link{% if page.url contains 'about' %} active{% endif %}"
                       href="{% link educators/index.md %}"
-                      {% if page.url contains '/educators' %}aria-current="page"{% endif %}
+                      {% if page.url contains 'educators' %}aria-current="page"{% endif %}
                       >Ведущие</a
                     >
                   </li>
                   <li class="nav-item">
                     <a
-                      class="nav-link{% if page.url contains '/courses' %} active{% endif %}"
-                      href="{% link courses/index.md %}"
-                      {% if page.url contains '/courses' %}aria-current="page"{% endif %}
-                      >Курсы</a
+                      class="nav-link{% if page.url contains 'about' %} active{% endif %}"
+                      href="{% link workshops/index.md %}"
+                      {% if page.url contains 'workshops' %}aria-current="page"{% endif %}
+                      >Воркшопы</a
                     >
                   </li>
                   <li class="nav-item">
                     <a
-                      class="nav-link{% if page.url contains '/schedule' %} active{% endif %}"
-                      href="{{ '/schedule/' | relative_url }}"
-                      {% if page.url contains '/schedule' %}aria-current="page"{% endif %}
+                      class="nav-link{% if page.url contains 'about' %} active{% endif %}"
+                      href="{{ link schedule/index.md }}"
+                      {% if page.url contains 'schedule' %}aria-current="page"{% endif %}
                       >Расписание</a
                     >
                   </li>
                   <li class="nav-item">
                     <a
-                      class="nav-link{% if page.url contains '/archive' %} active{% endif %}"
-                      href="{{ '/archive/' | relative_url }}"
-                      {% if page.url contains '/archive' %}aria-current="page"{% endif %}
+                      class="nav-link{% if page.url contains 'about' %} active{% endif %}"
+                      href="{{ link archive/index.md }}"
+                      {% if page.url contains 'archive' %}aria-current="page"{% endif %}
                       >Архив</a
                     >
                   </li>
                 </ul>
-                <div class="navbar-text small text-body-secondary ms-lg-3">
-                  <span class="d-block">📞 +7 (999) 999-99-99</span>
-                  <span class="d-block">🖂 info@devpraktika.ru</span>
-                  <span class="d-block">🗨 @devpraktika</span>
+                <div class="navbar-text small text-white ms-lg-3">
+                  <a href="tel:+79999999999"><img src="phone.png" width="19" height="19" alt="Телефон" /> +7 (999) 999-99-99</a>
+                  <a href="https://max.ru/u/devpraktika"><img src="max.png" width="19" height="19" alt="Max" /></a>
+                  <a href="https://t.me/devpraktika"><img src="telegram.png" width="19" height="19" alt="Telegram" /></a>
+                  <a href="mailto:info@devpraktika.ru"><img src="e-mail.png" width="19" height="19" alt="E-mail" /> info@devpraktika.ru</a>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+      </div>
     </header>
 
-    <main class="container py-4 flex-grow-1">
-      <div class="row justify-content-center">
-        <div class="col-12 col-xl-10 col-xxl-8">{{ content }}</div>
+    <main class="flex-grow-1 overflow-auto">
+      <div class="container-xxl">
+        {{ content }}
       </div>
     </main>
 
-    <footer class="border-top bg-light mt-auto py-3">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-12 col-xl-10 col-xxl-8 text-center">
-            <p class="text-muted small mb-0">&copy; dev Ⴥ praktika 2025–{{ "now" | date: "%Y" }}</p>
-          </div>
+    <footer>
+      <div class="container-xxl">
+        <div class="row justify-content-center w-100">
+          <div class="col-12 col-xl-10 col-xxl-8 d-flex flex-wrap align-items-center justify-content-between">
+            <a class="navbar-brand fw-semibold mb-0" href="{% link index.md %}"><img
+              style="width: clamp(40px, 3vw, 64px); height: auto"
+              width="64"
+              height="64"
+              alt="dev praktika"
+              src="devpraktika-logo.png"
+            /></a>
+            <p class="mb-0 small">&copy; 2025-2026, dev praktika</p>
+            <div class="navbar-text small text-white ms-lg-3">
+              <a href="tel:+79999999999"><img src="phone.png" width="19" height="19" alt="Телефон" /> +7 (999) 999-99-99</a>
+              <a href="https://max.ru/u/devpraktika"><img src="max.png" width="19" height="19" alt="Max" /></a>
+              <a href="https://t.me/devpraktika"><img src="telegram.png" width="19" height="19" alt="Telegram" /></a>
+              <a href="mailto:info@devpraktika.ru"><img src="e-mail.png" width="19" height="19" alt="E-mail" /> info@devpraktika.ru</a>
+            </div>
+      </div>
         </div>
       </div>
     </footer>
-
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
