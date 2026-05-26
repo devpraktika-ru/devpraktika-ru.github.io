@@ -16,7 +16,7 @@ title: dev praktika
     Проектируем архитектуру веб-приложений.
     Решаем задачи, практикуя подход «сначала тесты».</p>
 
-    <p>У наших ведущих большой практический опыт, а также статьи на Хабре, видеоуроки в YouTube и ответы на Stack Overflow.</p>
+    <p>У наших ведущих большой практический опыт и — кроме того — статьи на Хабре, видеоуроки в YouTube и ответы на Stack Overflow.</p>
   </div>
 </div>
 
@@ -34,7 +34,7 @@ title: dev praktika
         <p class="mb-1">{{ workshop.description }}</p>
         <p class="fs-3 text-end">{{ event.price }}₽</p>
       </div>
-      <div class="card">
+      <div class="card row">
         {% if event.educators %}
           {% for educator_slug in event.educators %}
             {% assign educator = site.educators | where: "slug", educator_slug | first %}
