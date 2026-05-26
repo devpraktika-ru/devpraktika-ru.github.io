@@ -29,19 +29,17 @@ title: dev praktika
     {% assign workshop = site.workshops | where: "slug", event.workshop | first %}
     <div class="col-sm-6 col-md-4">
       <div class="card mb-3">
-        <p>{{ event.date | date: "%d.%m.%Y" }} {{ event.date | date: "%H:%M" }}
-        <h3 class="mb-1">
-          <a href="{{ event.url | relative_url }}">{{ workshop.title | default: event.workshop }}</a>
-        </h3>
+        <p class="small">{{ event.date | date: "%d.%m.%Y" }} {{ event.date | date: "%H:%M" }}
+        <p class="mb-1"><strong><a class="text-black" href="{{ event.url | relative_url }}">{{ workshop.title | default: event.workshop }}</a></strong></p>
         <p class="mb-1">{{ workshop.description }}</p>
-        <p class="fs-3">{{ event.price }}</p>
+        <p class="fs-3 text-right">{{ event.price }}₽</p>
       </div>
       <div class="card">
         {% if event.educators %}
           {% for educator_slug in event.educators %}
             {% assign educator = site.educators | where: "slug", educator_slug | first %}
             {% if educator %}
-              <div class="col-4 text-center">
+              <div class="col-6 text-center">
                 <img src="{{ educator.thumbnail }}" alt="{{ educator.givenName }} {{ educator.familyName }}" ><br />
                 <strong>{{ educator.givenName }} {{ educator.familyName }}</strong>
               </div>
