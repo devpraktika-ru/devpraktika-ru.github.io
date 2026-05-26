@@ -12,10 +12,10 @@ title: "Архив"
 {% else %}
   <ul class="list-unstyled">
     {% for event in outgoing_events %}
-      {% assign course = site.courses | where: "slug", event.course | first %}
+      {% assign workshop = site.workshops | where: "slug", event.workshop | first %}
       <li class="mb-3 border-bottom pb-3">
         <p class="mb-1">
-          <a href="{{ event.url | relative_url }}">{{ course.title | default: event.course }}</a>
+          <a href="{{ event.url | relative_url }}">{{ workshop.title | default: event.workshop }}</a>
         </p>
         <p class="mb-1 text-muted small">
           {{ event.date | date: "%d.%m.%Y %H:%M" }}
