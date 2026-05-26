@@ -34,7 +34,8 @@ title: dev praktika
         <p class="mb-1">{{ workshop.description }}</p>
         <p class="fs-3 text-end">{{ event.price }}₽</p>
       </div>
-      <div class="card row">
+      <div class="card">
+        <div class="row">
         {% if event.educators %}
           {% for educator_slug in event.educators %}
             {% assign educator = site.educators | where: "slug", educator_slug | first %}
@@ -46,6 +47,7 @@ title: dev praktika
             {% endif %}
           {% endfor %}
         {% endif %}
+        </div>
       </div>
     </div>
   {% endfor %}
