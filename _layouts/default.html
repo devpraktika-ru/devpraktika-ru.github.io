@@ -31,6 +31,7 @@
         margin: 16px 16px 0 16px;
       }
 
+      /*
       .site-contacts {
         display: flex;
         flex-wrap: wrap;
@@ -47,6 +48,7 @@
       .site-contacts a:hover {
         opacity: 0.85;
       }
+        */
 
       @media (min-width: 992px) {
         header .navbar-collapse {
@@ -65,12 +67,12 @@
                 <a class="navbar-brand fw-semibold mb-0" href="{% link index.md %}"><img
                   width="64"
                   height="64"
-                  alt="dev praktika"
+                  alt=""
                   src="https://github.com/user-attachments/assets/d4383bbd-c67b-41e9-bf6e-452a62b1d1ac"
                 /><img
                   width="166"
                   height="48"
-                  alt="dev praktika"
+                  alt=""
                   src="https://github.com/user-attachments/assets/6b85f69f-0af8-49b6-bcc0-12c1309dd9b4"
                 /></a>
                 <div class="site-contacts small d-none d-lg-flex">
@@ -182,7 +184,7 @@
         </div>
         <div class="row justify-content-center w-100">
           <div class="col-12 col-xl-10 col-xxl-8 d-flex flex-wrap align-items-center justify-content-between">
-            &copy; 2025-2026, dev praktika
+            <p class="text-center text-secondary">&copy; 2025–{{ 'now' | date: "%Y" }}, dev praktika</p>
           </div>
         </div>
       </div>
