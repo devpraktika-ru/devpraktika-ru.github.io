@@ -1,13 +1,13 @@
 ---
 layout: default
-title: dev Ⴥ praktika
+title: dev praktika
 ---
 
 {% assign upcoming_events = site.events | where_exp: "event", "event.past == false" | sort: "date" %}
 
 <div class="row g-4">
   <div class="col-12 col-lg-8">
-    <h1 class="h2 mb-3">dev Ⴥ praktika</h1>
+    <h1 class="h2 mb-3">dev praktika</h1>
     <p>
       Мы — не курсы и не школа программирования.
       Мы — практикум для мидлов и сеньоров: учимся делать, подсматривая у старших товарищей.
