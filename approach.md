@@ -3,7 +3,7 @@ layout: default
 title: Подход
 ---
 
-<div class="row">
+<div class="row w-100">
   <div class="bg-white col-12">
     <h1>Мы — не курсы</h1>
  `  <p>Лучший способ научиться — делать, подсматривая, как делают более опытные коллеги.

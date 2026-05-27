@@ -3,7 +3,7 @@ layout: default
 title: "Практикумы"
 ---
 
-<div class="row">
+<div class="row w-100">
   <div class="bg-white col-12 mb-3">
     <h1>Практикумы</h1>
     <p>Откуда берутся темы?
@@ -16,9 +16,9 @@ title: "Практикумы"
   </div>
 </div>
 
-<div class="row bg-white">
+<div class="row w-100">
   {% for workshop in site.workshops %}
-    <div class="col-4 mb-1 text-center">
+    <div class="col-4 bg-white mb-1 text-center">
       <p class="fw-bold fs-5 mb-1"><a class="text-black" href="{{ workshop.url | relative_url }}">{{ workshop.title }}</a></p>
       <p><em>{{ workshop.description }}</em></p>
     </div>
