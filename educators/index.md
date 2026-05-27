@@ -22,7 +22,7 @@ title: "Ведущие"
   {% for educator in sorted_educators %}
     <div class="col-6 text-center mb-1">
       <p class="fw-bold fs-5 mb-1"><a class="text-black" href="{{ educator.url | relative_url }}">{{ educator.givenName }} {{ educator.familyName }}</a></p>
-      <img src="{{ educator.thumbnail }}" alt="{{ educator.givenName }} {{ educator.familyName }}" />
+      <img class="educator" src="{{ educator.thumbnail }}" alt="{{ educator.givenName }} {{ educator.familyName }}" />
       <p><em>{{ educator.description }}</em></p>
     </div>
   {% endfor %}

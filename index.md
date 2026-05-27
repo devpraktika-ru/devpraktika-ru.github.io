@@ -41,7 +41,7 @@ title: dev praktika
             {% assign educator = site.educators | where: "slug", educator_slug | first %}
             {% if educator %}
               <div class="col-6 text-center">
-                <img src="{{ educator.thumbnail }}" alt="{{ educator.givenName }} {{ educator.familyName }}" ><br />
+                <img class="educator" src="{{ educator.thumbnail }}" alt="{{ educator.givenName }} {{ educator.familyName }}" ><br />
                 <strong>{{ educator.givenName }} {{ educator.familyName }}</strong>
               </div>
             {% endif %}
