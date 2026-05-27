@@ -20,7 +20,7 @@ title: "Практикумы"
 
 <div class="row">
   {% for workshop in site.workshops %}
-    <div class="col-4 rounded-block text-center">
+    <div class="col-6 rounded-block text-center ms-1 me-1 mb-1">
       <p class="fw-bold fs-5 mb-1"><a class="text-black" href="{{ workshop.url | relative_url }}">{{ workshop.title }}</a></p>
       <p><em>{{ workshop.description }}</em></p>
     </div>
