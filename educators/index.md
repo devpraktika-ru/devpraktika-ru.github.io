@@ -4,6 +4,11 @@ title: "Ведущие"
 ---
 
 {% assign sorted_educators = site.educators | sort: "givenName" | sort: "familyName" %}
+
+<h1>Ведущие</h1>
+
+<p>
+
 <ul>
   {% for educator in sorted_educators %}
     <li>
