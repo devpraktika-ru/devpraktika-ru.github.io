@@ -9,7 +9,9 @@ title: "Расписание"
   <div class="rounded-block col-12">
     <h1>Ближайшие практикумы</h1>
     {% if upcoming_events.size == 0 %}
-      <p class="text-muted mb-0">В ближайшее время ничего не будет.</p>
+      <p class="text-muted">В ближайшее время ничего не будет.</p>
+    {% else %}
+      <p>Предстоящие мероприятия с темами и ценами.</p>
     {% endif %}
   </div>
 </div>

@@ -9,7 +9,9 @@ title: "Архив"
   <div class="rounded-block col-12">
     <h1>Прошедшие практикумы</h1>
     {% if outgoing_events.size == 0 %}
-      <p class="text-muted mb-0">Мы пока ничего не проводили.</p>
+      <p class="text-muted">Мы пока ничего не проводили.</p>
+    {% else %}
+      <p>Все прошедшие мероприятия с отзывами участников.</p>
     {% endif %}
   </div>
 </div>
