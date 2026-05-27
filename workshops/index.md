@@ -4,7 +4,7 @@ title: "Практикумы"
 ---
 
 <div class="row">
-  <div class="rounded-block col-12 mb-3">
+  <div class="rounded-block col-12 mb-3 w-100">
     <h1>Практикумы</h1>
 
     <p>Откуда берутся темы?
