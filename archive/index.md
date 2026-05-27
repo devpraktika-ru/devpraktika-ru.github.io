@@ -5,19 +5,9 @@ title: "Архив"
 
 {% assign outgoing_events = site.events | where_exp: "event", "event.past == true" | sort: "date" %}
 
-<div class="row">
-  <div class="rounded-block col-12">
-    <h1>Прошедшие практикумы</h1>
-    {% if outgoing_events.size == 0 %}
-      <p class="text-muted">Мы пока ничего не проводили.</p>
-    {% else %}
-      <p>Все прошедшие мероприятия с отзывами участников.</p>
-    {% endif %}
-  </div>
-</div>
-
-
-{% if outgoing_events.size > 0 %}
+{% if outgoing_events.size == 0 %}
+  <p class="text-muted">Мы пока ничего не проводили.</p>
+{% else %}
   <div class="row">
   {% for event in outgoing_events %}
     {% assign workshop = site.workshops | where: "slug", event.workshop | first %}

@@ -5,18 +5,9 @@ title: "Расписание"
 
 {% assign upcoming_events = site.events | where_exp: "event", "event.past == false" | sort: "date" %}
 
-<div class="row">
-  <div class="rounded-block col-12">
-    <h1>Ближайшие практикумы</h1>
-    {% if upcoming_events.size == 0 %}
-      <p class="text-muted">В ближайшее время ничего не будет.</p>
-    {% else %}
-      <p>Предстоящие мероприятия с темами и ценами.</p>
-    {% endif %}
-  </div>
-</div>
-
-{% if upcoming_events.size > 0 %}
+{% if upcoming_events.size == 0 %}
+  <p class="text-muted">В ближайшее время ничего не будет.</p>
+{% else %}
   <div class="row">
   {% for event in upcoming_events %}
     {% assign workshop = site.workshops | where: "slug", event.workshop | first %}
