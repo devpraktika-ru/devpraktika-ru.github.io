@@ -3,13 +3,24 @@ layout: default
 title: "Практикумы"
 ---
 
-<ul>
+<div class="rounded-block">
+  <h1>Практикумы</h1>
+
+  <p>Откуда берутся темы?
+  Из жизни.
+  Архитектурные воркшопы — основаны на реальных событиях.
+  За код-ретритами — живая боль освоения TDD.
+  Интернет-магазин?
+  Да, мы такой писали!</p>
+
+  <p>Кроме того, мы постоянно работаем над новыми темами.</p>
+</div>
+
+<div class="row">
   {% for workshop in site.workshops %}
-    <li>
-      <a href="{{ workshop.url | relative_url }}">
-        {{ workshop.title }}
-      </a>
+    <div class="col-6 rounded-block text-center">
+      <p class="fw-bold fs-5 mb-1"><a class="text-black" href="{{ workshop.url | relative_url }}">{{ workshop.title }}</a></p>
       <p><em>{{ workshop.description }}</em></p>
     </li>
   {% endfor %}
-</ul>
+</div>
