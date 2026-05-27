@@ -17,9 +17,11 @@ layout: default
   </div>
 </div>
 
+{% assign workshop = site.workshops | where: "slug", page.workshop | first %}
+
 <div class="row w-100">
   <div class="bg-white col-12">
-    <h1>{{ page.title }} {{ page.date | date: "%d.%m.%Y" }}</h1>
+    <h1>{{ workshop.title }} {{ page.date | date: "%d.%m.%Y" }}</h1>
     {{ page.content | markdownify }}
     {% if page.past %}
       <p class="fs-3 text-end">Оценка: {% if page.mark %}{{ page.mark }}{% else %}?{% endif %}</p>
