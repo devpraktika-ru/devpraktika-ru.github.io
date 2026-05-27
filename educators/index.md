@@ -18,7 +18,7 @@ title: "Ведущие"
   </div>
 </div>
 
-<div class="row rounded-block">
+<div class="row rounded-block w-100">
   {% for educator in sorted_educators %}
     <div class="col-6 text-center mb-1">
       <p class="fw-bold fs-5 mb-1"><a class="text-black" href="{{ educator.url | relative_url }}">{{ educator.givenName }} {{ educator.familyName }}</a></p>
