@@ -2,15 +2,36 @@
 layout: default
 ---
 
-{{ page.date | date: "%d.%m.%Y" }}
+<div class="row w-100">
+  <div class="bg-white col-12">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        {% if page.past %}
+          <li class="breadcrumb-item"><a href="{% link archive/index.md %}">Архив</a></li>
+        {% else %}
+          <li class="breadcrumb-item"><a href="{% link schedule/index.md %}">Расписание</a></li>
+        {% endif %}
+        <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
+      </ol>
+    </nav>
+  </div>
+</div>
 
-{{ page.date | date: "%H:%M" }}
-
-{{ page.content | markdownify }}
-
-{% if page.past == true %}
-  Оценка: {% if page.mark %}{{ page.mark }}{% else %}?{% endif %}
-{% else if page.past == false %}
-  Цена: {{ page.price }}
-  Записаться
-{% endif %}
+<div class="row w-100">
+  <div class="bg-white col-12">
+    <h1>{{ page.title }} {{ page.date | date: "%d.%m.%Y" }}</h1>
+    {{ page.content | markdownify }}
+    {% if page.past %}
+      <p class="fs-3 text-end">Оценка: {% if page.mark %}{{ page.mark }}{% else %}?{% endif %}</p>
+    {% else %}
+      <p class="fs-3 text-end">Цена:{{ event.price }}₽</p>
+      <p class="fw-bold">Для записи не мероприятие, пожалуйста, свяжитесь с нами по одному из следующих контактов:</p>
+      <ul>
+        <li><span class="bg-black"><img src="https://github.com/user-attachments/assets/3293113e-a4e3-4c3b-9fa9-52d78198c197" width="19" height="19" alt="Телефон" /> +7 (999) 999-99-99</span></li>
+        <li><span class="bg-black"><img src="https://github.com/user-attachments/assets/99b674a2-eb30-4d08-8422-c30c98b46d3d" width="19" height="19" alt="Telegram" /></span> <a href="https://t.me/devpraktika">devpraktika</a></li>
+        <li><span class="bg-black"><img src="https://github.com/user-attachments/assets/8bdc9834-61e1-4720-b5fc-1837988a1adb" width="19" height="19" alt="Max" /></span> <a href="https://max.ru/u/devpraktika">devpraktika</a></li>
+        <li><span class="bg-black"><img src="https://github.com/user-attachments/assets/c9d2f276-defc-40fe-976d-32c8fcf83187" width="19" height="19" alt="E-mail" /></span> <a href="mailto:info@devpraktika.ru">info@devpraktika.ru</a></li>
+      </ul>
+    {% endif %}
+  </div>
+</div>
