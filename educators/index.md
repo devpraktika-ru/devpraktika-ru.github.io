@@ -18,9 +18,9 @@ title: "Ведущие"
   </div>
 </div>
 
-<div class="row">
+<div class="row bg-white w-100">
   {% for educator in sorted_educators %}
-    <div class="bg-white col-6 mb-1 w-100 text-center">
+    <div class="col-6 mb-1 text-center">
       <p class="fw-bold fs-5 mb-1"><a class="text-black" href="{{ educator.url | relative_url }}">{{ educator.givenName }} {{ educator.familyName }}</a></p>
       <img class="educator" src="{{ educator.thumbnail }}" alt="{{ educator.givenName }} {{ educator.familyName }}" />
       <p><em>{{ educator.description }}</em></p>
