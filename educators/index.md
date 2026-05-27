@@ -6,7 +6,7 @@ title: "Ведущие"
 {% assign sorted_educators = site.educators | sort: "givenName" | sort: "familyName" %}
 
 <div class="row">
-  <div class="bg-white col-12 mb-3 w-100">
+  <div class="bg-white col-12 mb-3">
     <h1>Ведущие</h1>
 
     <p>Мы познакомились в <a href="https://prog.msk.ru">Московском клубе программистов</a>.
@@ -18,7 +18,7 @@ title: "Ведущие"
   </div>
 </div>
 
-<div class="row bg-white w-100">
+<div class="row bg-white">
   {% for educator in sorted_educators %}
     <div class="col-6 mb-1 text-center">
       <p class="fw-bold fs-5 mb-1"><a class="text-black" href="{{ educator.url | relative_url }}">{{ educator.givenName }} {{ educator.familyName }}</a></p>
