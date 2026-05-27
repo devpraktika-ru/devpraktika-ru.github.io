@@ -4,7 +4,7 @@ title: "Практикумы"
 ---
 
 <div class="row">
-  <div class="rounded-block col-12 mb-3 w-100">
+  <div class="bg-white col-12 mb-3 w-100">
     <h1>Практикумы</h1>
 
     <p>Откуда берутся темы?
@@ -18,9 +18,9 @@ title: "Практикумы"
   </div>
 </div>
 
-<div class="row rounded-block w-100">
+<div class="row">
   {% for workshop in site.workshops %}
-    <div class="col-6 text-center mb-1">
+    <div class="bg-white col-6 mb-1 w-100 text-center">
       <p class="fw-bold fs-5 mb-1"><a class="text-black" href="{{ workshop.url | relative_url }}">{{ workshop.title }}</a></p>
       <p><em>{{ workshop.description }}</em></p>
     </div>
