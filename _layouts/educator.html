@@ -2,26 +2,36 @@
 layout: default
 ---
 
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="{% link educators/index.md %}">Ведущие</a></li>
-    <li class="breadcrumb-item active" aria-current="page">{{ page.givenName }} {{ page.familyName }}</li>
-  </ol>
-</nav>
-
-<h1>{{ page.givenName }} {{ page.familyName }}</h1>
-
-{% if page.image %}
-<img src="{{ page.image }}" alt="{{ page.givenName }} {{ page.familyName }}" />
-{% endif %}
-
-<div class="contacts">
-  {% if page.github %}
-    <a href="https://github.com/{{ page.github }}/">GitHub</a>
-  {% endif %}
-  {% if page.telegram %}
-    <a href="https://t.me/{{ page.telegram }}">Telegram</a>
-  {% endif %}
+<div class="row">
+  <div class="bg-white col-12">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% link educators/index.md %}">Ведущие</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ page.givenName }} {{ page.familyName }}</li>
+      </ol>
+    </nav>
+  </div>
 </div>
 
-{{ content }}
+<div class="row">
+  <div class="bg-white col-12">
+    <h1>{{ page.givenName }} {{ page.familyName }}</h1>
+    <p>|
+      {% if page.github %}
+        <a href="https://github.com/{{ page.github }}/">GitHub</a> |
+      {% endif %}
+      {% if page.telegram %}
+        <a href="https://t.me/{{ page.telegram }}">Telegram</a> |
+      {% endif %}
+    </p>
+
+    {% if page.image %}
+    <p><img class="educator float-start"
+            src="{{ page.thumbnail }}"
+            alt="{{ page.givenName }} {{ page.familyName }}"
+        /></p>
+    {% endif %}
+
+    {{ content }}
+  </div>
+</div>

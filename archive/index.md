@@ -9,6 +9,11 @@ title: "Архив"
   <p class="text-muted">Мы пока ничего не проводили.</p>
 {% else %}
   <div class="row">
+    <div class="bg-white col-12">
+      <h1>Прошедшие события</h1>
+    </div>
+  </div>
+  <div class="row">
   {% for event in outgoing_events %}
     {% assign workshop = site.workshops | where: "slug", event.workshop | first %}
     <div class="col-sm-6 col-md-4">

@@ -9,6 +9,11 @@ title: "Расписание"
   <p class="text-muted">В ближайшее время ничего не будет.</p>
 {% else %}
   <div class="row">
+    <div class="bg-white col-12">
+      <h1>Предстоящие события</h1>
+    </div>
+  </div>
+  <div class="row">
   {% for event in upcoming_events %}
     {% assign workshop = site.workshops | where: "slug", event.workshop | first %}
     <div class="col-sm-6 col-md-4">
