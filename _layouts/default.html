@@ -1,185 +1,71 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: 'ru' }}">
+<html lang="ru">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{{ page.title | default: site.title }}</title>
+    <title>dev praktika</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <style>
-      body {
-        background-color: #EEF8FF;
-      }
-
-      header {
-        background-color: #856aff;
-        border-radius: 0 0 16px 16px;
-      }
-
-      footer {
-        background-color: black;
-        border-radius: 16px 16px 0 0;
-      }
-
-      blockquote {
-        border-left: 2px solid #856aff;
-        padding-left: 16px;
-      }
-
-      @media (min-width: 992px) {
-        header .navbar-collapse {
-          justify-content: center;
-        }
-      }
-
-      .main-intro {
-        color: white;
-        background-color: #856aff;
-        border-radius: 0 0 16px 16px;
-        padding: 16px;
-      }
-
-      .rounded-block {
-        border-radius: 16px;
-        background-color: white;
-        padding: 16px;
-      }
-
-      img.educator {
-        border-radius: 8px;
-        width: 90px;
-        height: 120px;
-      }
-    </style>
-  </head>
-  <body class="d-flex flex-column min-vh-100">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />  </head>
+  <body>
     <header>
-      <div class="container-xxl">
-        <div class="row justify-content-center w-100">
-          <div class="col-12 col-xl-10 col-xxl-8">
-            <nav class="navbar navbar-expand-lg navbar-dark flex-column align-items-stretch p-0">
-              <div class="d-flex w-100 align-items-center justify-content-between">
-                <a class="navbar-brand fw-semibold mb-0" href="{% link index.md %}"><img
-                  width="64"
-                  height="64"
-                  alt=""
-                  src="https://github.com/user-attachments/assets/d4383bbd-c67b-41e9-bf6e-452a62b1d1ac"
-                /><img
-                  width="166"
-                  height="48"
-                  alt=""
-                  src="https://github.com/user-attachments/assets/6b85f69f-0af8-49b6-bcc0-12c1309dd9b4"
-                /></a>
-                <div>
-                  <a class="text-white small" href="tel:+79852557973"><img src="https://github.com/user-attachments/assets/3293113e-a4e3-4c3b-9fa9-52d78198c197" width="19" height="19" alt="Телефон" /> +7 (985) 255-79-73</a>
-                  <a href="https://max.ru/u/f9LHodD0cOKlXiTIgNfTlN3ru3PnblLD41RwzzgaRSGXKrwjacxRWLlTOMA"><img src="https://github.com/user-attachments/assets/8bdc9834-61e1-4720-b5fc-1837988a1adb" width="19" height="19" alt="Max" /></a>
-                  <a href="https://t.me/markshevchenko"><img src="https://github.com/user-attachments/assets/99b674a2-eb30-4d08-8422-c30c98b46d3d" width="19" height="19" alt="Telegram" /></a>
-                  <a class="text-white small" href="mailto:markshevchenko@inbox.ru"><img src="https://github.com/user-attachments/assets/c9d2f276-defc-40fe-976d-32c8fcf83187" width="19" height="19" alt="E-mail" /> markshevchenko@inbox.ru</a>
-                </div>
-                <button
-                  class="navbar-toggler d-lg-none"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#siteNavbar"
-                  aria-controls="siteNavbar"
-                  aria-expanded="false"
-                  aria-label="Toggle navigation"
-                >
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-              </div>
-              <div class="collapse navbar-collapse w-100" id="siteNavbar">
-                <ul class="navbar-nav mx-lg-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a
-                      class="fs-6 nav-link{% if page.url contains 'approach' %} active{% endif %}"
-                      href="{% link approach.md %}"
-                      {% if page.url contains 'approach' %}aria-current="page"{% endif %}
-                      >Подход</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      class="fs-6 nav-link{% if page.url contains 'educators' %} active{% endif %}"
-                      href="{% link educators/index.md %}"
-                      {% if page.url contains 'educators' %}aria-current="page"{% endif %}
-                      >Ведущие</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      class="fs-6 nav-link{% if page.url contains 'workshops' %} active{% endif %}"
-                      href="{% link workshops/index.md %}"
-                      {% if page.url contains 'workshops' %}aria-current="page"{% endif %}
-                      >Практикумы</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      class="fs-6 nav-link{% if page.url contains 'schedule' %} active{% endif %}"
-                      href="{% link schedule/index.md %}"
-                      {% if page.url contains 'schedule' %}aria-current="page"{% endif %}
-                      >Расписание</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      class="fs-6 nav-link{% if page.url contains 'archive' %} active{% endif %}"
-                      href="{% link archive/index.md %}"
-                      {% if page.url contains 'archive' %}aria-current="page"{% endif %}
-                      >Архив</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </nav>
-          </div>
-        </div>
-      </div>
+      <a class="header-logo" href="{{ '/' | relative_url }}">
+        <img
+          src="{{ '/assets/images/logo.png' | relative_url }}"
+          width="256"
+          height="256"
+          alt="На главную страницу"
+        />
+      </a>
+      <img
+        class="header-title"
+        src="{{ '/assets/images/dev-praktika.png' | relative_url }}"
+        width="500"
+        height="90"
+        alt="dev praktika"
+      />
+      <nav class="header-menu dropdown">
+        <button
+          class="header-menu-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+          aria-label="Меню сайта"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="/approach/">Подход</a></li>
+          <li><a class="dropdown-item" href="/educators/">Ведущие</a></li>
+          <li><a class="dropdown-item" href="/workshops/">Практикумы</a></li>
+          <li><a class="dropdown-item" href="/schedule/">Расписание</a></li>
+          <li><a class="dropdown-item" href="/archive/">Архив</a></li>
+        </ul>
+      </nav>
     </header>
-
-    <main class="flex-grow-1 overflow-auto">
-      <div class="container-xxl">
-        <div class="row justify-content-center w-100">
-          <div class="col-12 col-xl-10 col-xxl-8 d-flex flex-wrap align-items-center justify-content-between">
-            {{ content }}
-          </div>
-        </div>
-      </div>
+    <main>
+      {{ content }}
     </main>
-
     <footer>
-      <div class="container-xxl">
-        <div class="row justify-content-center w-100">
-          <div class="col-12 col-xl-10 col-xxl-8 d-flex flex-wrap align-items-center justify-content-between">
-            <span class="navbar-brand mb-0"><img
-              width="64"
-              height="64"
-              alt=""
-              src="https://github.com/user-attachments/assets/d4383bbd-c67b-41e9-bf6e-452a62b1d1ac"
-            /><img
-              width="166"
-              height="48"
-              alt=""
-              src="https://github.com/user-attachments/assets/6b85f69f-0af8-49b6-bcc0-12c1309dd9b4"
-            /></span>
-            <div>
-              <a class="text-white small" href="tel:+79852557973"><img src="https://github.com/user-attachments/assets/3293113e-a4e3-4c3b-9fa9-52d78198c197" width="19" height="19" alt="Телефон" /> +7 (985) 255-79-73</a>
-              <a href="https://max.ru/u/f9LHodD0cOKlXiTIgNfTlN3ru3PnblLD41RwzzgaRSGXKrwjacxRWLlTOMA"><img src="https://github.com/user-attachments/assets/8bdc9834-61e1-4720-b5fc-1837988a1adb" width="19" height="19" alt="Max" /></a>
-              <a href="https://t.me/markshevchenko"><img src="https://github.com/user-attachments/assets/99b674a2-eb30-4d08-8422-c30c98b46d3d" width="19" height="19" alt="Telegram" /></a>
-              <a class="text-white small" href="mailto:markshevchenko@inbox.ru"><img src="https://github.com/user-attachments/assets/c9d2f276-defc-40fe-976d-32c8fcf83187" width="19" height="19" alt="E-mail" /> markshevchenko@inbox.ru</a>
-        </div>
-          </div>
-        </div>
-        <div class="row justify-content-center w-100">
-          <div class="col-12 col-xl-10 col-xxl-8 text-center">
-            <p class="mb-0 small text-secondary">&copy; 2025–{{ 'now' | date: "%Y" }}, dev praktika</p>
-          </div>
-        </div>
+      <div class="footer-phone-slot">
+        <a class="footer-phone" href="tel:+79852557973">+7 (985) 255-79-73</a>
+      </div>
+      <div class="footer-icons">
+        <a href="https://t.me/markshevchenko">
+          <img src="{{ '/assets/images/telegram.png' | relative_url }}" width="65" height="64" alt="Telegram" />
+        </a>
+        <a href="https://max.ru/u/f9LHodD0cOKlXiTIgNfTlN3ru3PnblLD41RwzzgaRSGXKrwjacxRWLlTOMA">
+          <img src="{{ '/assets/images/max.png' | relative_url }}" width="67" height="67" alt="Max" />
+        </a>
+        <a href="mailto:markshevchenko@inbox.ru">
+          <img src="{{ '/assets/images/email.png' | relative_url }}" width="80" height="80" alt="E-mail" />
+        </a>
       </div>
     </footer>
     <script
