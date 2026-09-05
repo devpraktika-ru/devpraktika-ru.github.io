@@ -21,7 +21,7 @@ title: "Расписание"
         <p class="fw-bold fs-5 mb-1"><a class="text-black" href="{{ event.url | relative_url }}">{{ workshop.title | default: event.workshop }}</a></p>
         <p class="small">{{ event.date | date: "%d.%m.%Y" }} {{ event.date | date: "%H:%M" }}</p>
         <p class="mb-1">{{ workshop.description }}</p>
-        <p class="fs-3 text-end">{{ event.price }}₽</p>
+        <p class="fs-3 text-end price">{{ event.price }}₽</p>
       </div>
       <div class="rounded-block">
         <div class="row">

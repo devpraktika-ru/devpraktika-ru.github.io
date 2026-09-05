@@ -93,6 +93,25 @@ main > :last-child {
   margin-bottom: 0;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #333333;
+}
+
+a,
+a:hover,
+a:focus-visible {
+  color: #0099ee;
+}
+
+.price {
+  color: #0099ee;
+}
+
 footer {
   display: flex;
   flex-shrink: 0;
