@@ -14,7 +14,7 @@ title: "Архив"
     <p class="small">📅 {{ event.date | date: "%d.%m.%Y" }} ⏰ {{ event.date | date: "%H:%M" }}</p>
     <p>{{ workshop.description }}</p>
     <p class="fs-3 text-end price">
-      {% if event.price = 0 %}
+      {% if event.price == 0 %}
         бесплатно
       {% else %}
         {{ event.price }}₽
