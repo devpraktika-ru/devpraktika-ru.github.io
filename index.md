@@ -3,7 +3,7 @@ layout: default
 title: dev praktika
 ---
 
-{% assign upcoming_events = site.posts | where_exp: "event", "event.past == false" | sort: "date" %}
+{% assign upcoming_events = site.posts | where_exp: "event", "event.date >= site.time" | sort: "date" %}
 
 # Практикум для мидлов и сеньоров
 

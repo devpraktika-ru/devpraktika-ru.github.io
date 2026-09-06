@@ -7,10 +7,8 @@ timezone: Europe/Moscow
 collections:
   educators:
     output: true
-    permalink: /educators/:slug/
   workshops:
     output: true
-    permalink: /workshops/:slug/
 
 defaults:
   - scope:
@@ -18,11 +16,13 @@ defaults:
       type: "educators"
     values:
       layout: "educator"
+      permalink: /educators/:slug/
   - scope:
       path: ""
       type: "workshops"
     values:
       layout: "workshop"
+      permalink: /workshops/:slug/
   - scope:
       path: ""
       type: "posts"

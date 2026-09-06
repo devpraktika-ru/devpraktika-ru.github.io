@@ -8,7 +8,7 @@ layout: default
   <div class="bg-white col-12">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        {% if page.past %}
+        {% if page.date < site.time %}
           <li class="breadcrumb-item"><a href="{% link archive/index.md %}">Архив</a></li>
         {% else %}
           <li class="breadcrumb-item"><a href="{% link schedule/index.md %}">Расписание</a></li>
@@ -23,7 +23,7 @@ layout: default
   <div class="bg-white col-12">
     <h1>{{ workshop.title }} {{ page.date | date: "%d.%m.%Y" }}</h1>
     {{ page.content | markdownify }}
-    {% if page.past %}
+    {% if page.date < site.time %}
       <p class="fs-3 text-end">Оценка: {% if page.mark %}{{ page.mark }}{% else %}?{% endif %}</p>
     {% else %}
       <p class="fs-3 text-end price">Цена: {{ page.price }}₽</p>

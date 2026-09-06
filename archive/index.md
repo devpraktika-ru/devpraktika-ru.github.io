@@ -3,7 +3,7 @@ layout: default
 title: "Архив"
 ---
 
-{% assign outgoing_events = site.posts | where_exp: "event", "event.past == true" | sort: "date" %}
+{% assign outgoing_events = site.posts | where_exp: "event", "event.date < site.time" | sort: "date" %}
 
 {% if outgoing_events.size == 0 %}
   <p class="text-muted">Мы пока ничего не проводили.</p>
