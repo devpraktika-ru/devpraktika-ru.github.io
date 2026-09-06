@@ -11,9 +11,15 @@ title: "Архив"
   {% assign workshop = site.workshops | where: "slug", event.  workshop | first %}
   <article class="mb-4">
     <h3 class="text-center"><a href="{{ event.url |   relative_url }}">{{ workshop.title }}</a></h3>
-    <p>{{ event.date | date: "%d.%m.%Y" }} {{ event.date |   date: "%H:%M" }}</p>
+    <p class="small">📅 {{ event.date | date: "%d.%m.%Y" }} ⏰ {{ event.date | date: "%H:%M" }}</p>
     <p>{{ workshop.description }}</p>
-    <p class="fs-3 text-end price">{{ event.price }}₽</p>
+    <p class="fs-3 text-end price">
+      {% if event.price = 0 %}
+        бесплатно
+      {% else %}
+        {{ event.price }}₽
+      {% endif %}
+    </p>
     <div class="row">
       {% for educator_slug in event.educators %}
         {% assign educator = site.educators | where: "slug",   educator_slug | first %}
