@@ -18,7 +18,7 @@ title: "Ведущие"
 <div class="card-list">
 {% for educator in sorted_educators %}
   <article>
-    <h3><a class="text-black" href="{{ educator.url | relative_url }}">{{ educator.givenName }} {{ educator.familyName }}</a></h3>
+    <p class="fs-5"><a class="text-black" href="{{ educator.url | relative_url }}">{{ educator.givenName }} {{ educator.familyName }}</a></p>
     <img class="educator"
          witdth="80"
          height="80"
