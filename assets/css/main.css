@@ -178,13 +178,16 @@ footer {
 
 @media (hover: none), (pointer: coarse) {
   .container {
-    max-width: none;
     padding-right: 5%;
     padding-left: 5%;
   }
 }
 
 @media (hover: hover) and (pointer: fine) {
+  .container {
+    max-width: min(1320px, 50vw);
+  }
+
   .header-title {
     display: none;
   }
