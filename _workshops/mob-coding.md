@@ -1,6 +1,5 @@
 ---
 title: Групповое программирование
-id: mob-coding
 description: |
   Решаем задачи с leetcode, hackerrank, codekata.
   Осваиваем практики, языки программирования, секретные приёмы.

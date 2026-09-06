@@ -1,4 +1,4 @@
-title: "dev praktika: воркшопы для мидлов и сеньоров"
+title: "dev praktika: воркшопы для программистов"
 lang: ru
 url: https://devpraktika.ru
 future: true
@@ -7,13 +7,10 @@ timezone: Europe/Moscow
 collections:
   educators:
     output: true
-    permalink: /educators/:title/
+    permalink: /educators/:slug/
   workshops:
     output: true
-    permalink: /workshops/:title/
-  events:
-    output: true
-    permalink: /events/:name/
+    permalink: /workshops/:slug/
 
 defaults:
   - scope:
@@ -28,6 +25,7 @@ defaults:
       layout: "workshop"
   - scope:
       path: ""
-      type: "events"
+      type: "posts"
     values:
       layout: "event"
+      permalink: /events/:year-:month-:day-:slug/

@@ -1,10 +1,8 @@
 ---
 date: 2026-04-04T11:00:00+03:00
 title: Архитектурный воркшоп 4 апреля 2026 года
-past: true
 price: 3000
 mark: 4.2
-workshop: arc-shop
 educators:
   - anton-stekanov
   - mark-shevchenko
