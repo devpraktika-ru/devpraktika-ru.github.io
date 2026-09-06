@@ -18,7 +18,7 @@ title: "Расписание"
     <article class="mb-4">
       <h3><a class="text-black" href="{{ event.url |   relative_url }}">{{ workshop.title }}</a></h3>
       <p class="small">📅 {{ event.date | date: "%d.%m.%Y" }} ⏰ {{ event.date | date: "%H:%M" }}</p>
-      <p>{{ workshop.description }}</p>
+      <p><em>{{ workshop.description }}</em></p>
       <p class="fs-3 text-end price">
         {% if event.price == 0 %}
           бесплатно
