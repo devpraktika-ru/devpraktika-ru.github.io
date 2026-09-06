@@ -31,4 +31,4 @@ title: "Расписание"
       </div>
     </article>
   {% endfor %}
-{% endif }
+{% endif %}
