@@ -37,4 +37,4 @@ title: dev praktika
       </div>
     </article>
   {% endfor %}
-{% endif }
+{% endif %}
