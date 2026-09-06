@@ -14,11 +14,9 @@ title: "Практикумы"
 
 Кроме того, мы постоянно работаем над новыми темами.
 
-<div class="row w-100">
-  {% for workshop in site.workshops %}
-    <div class="col mb-1 text-center">
-      <p class="fw-bold fs-5 mb-1"><a class="text-black" href="{{ workshop.url | relative_url }}">{{ workshop.title }}</a></p>
-      <p><em>{{ workshop.description }}</em></p>
-    </div>
-  {% endfor %}
-</div>
+{% for workshop in site.workshops %}
+  <article class="mb-4">
+    <h3><a class="text-black" href="{{ workshop.url | relative_url }}">{{ workshop.title }}</a></h3>
+    <p><em>{{ workshop.description }}</em></p>
+  </article>
+{% endfor %}
