@@ -22,7 +22,7 @@ layout: default
 <div class="row w-100">
   <div class="bg-white col-12">
     <h1>{{ workshop.title }}</h1>
-    <p class="fs-7">📅 {{ page.date | date: "%d.%m.%Y" }} ⏰ {{ page.date | date: "%H:%M" }}</p>
+    <p class="small">📅 {{ page.date | date: "%d.%m.%Y" }} ⏰ {{ page.date | date: "%H:%M" }}</p>
     {{ page.content | markdownify }}
     {% if page.date < site.time %}
       <p class="fs-3 text-end">Оценка: {% if page.mark %}{{ page.mark }}{% else %}?{% endif %}</p>
