@@ -5,7 +5,7 @@ title: dev praktika
 
 {% assign upcoming_events = site.posts | where_exp: "event", "event.date >= site.time" | sort: "date" %}
 
-# Практикум для мидлов и сеньоров
+# Практикум для программистов
 
 Архитектурные воркшопы, код-ретриты, быстрое введение в языки программирования — по вечерам и в выходные.
 

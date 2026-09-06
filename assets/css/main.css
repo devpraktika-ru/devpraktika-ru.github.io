@@ -13,17 +13,20 @@ body {
 header {
   position: relative;
   z-index: 10;
-  display: flex;
   flex-shrink: 0;
-  align-items: center;
   width: 100%;
   height: 10vh;
   height: 10dvh;
-  padding-right: 5%;
-  padding-left: 5%;
-  column-gap: 5%;
   overflow: visible;
   background-color: #0099ee;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  column-gap: 5%;
+  overflow: visible;
 }
 
 .header-logo {
@@ -84,12 +87,12 @@ main {
   flex: 1 1 auto;
   width: 100%;
   min-height: 0;
-  padding: 10vh 5% 5vh;
-  padding: 10dvh 5% 5dvh;
+  padding: 10vh 0 5vh;
+  padding: 10dvh 0 5dvh;
   overflow: auto;
 }
 
-main > :last-child {
+main .container > :last-child {
   margin-bottom: 0;
 }
 
@@ -113,16 +116,18 @@ a:focus-visible {
 }
 
 footer {
-  display: flex;
   flex-shrink: 0;
-  align-items: center;
   width: 100%;
   height: 5vh;
   height: 5dvh;
-  padding-right: 5%;
-  padding-left: 5%;
-  column-gap: 3%;
   background-color: #333333;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  column-gap: 3%;
 }
 
 .footer-phone-slot {
@@ -169,4 +174,82 @@ footer {
   width: auto;
   height: 4vh;
   height: 4dvh;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .container {
+    max-width: none;
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .header-title {
+    display: none;
+  }
+
+  .header-menu {
+    flex: 1 1 auto;
+    align-self: stretch;
+    min-width: 0;
+  }
+
+  .header-menu-toggle {
+    display: none;
+  }
+
+  .header-menu-list {
+    display: flex;
+    position: static;
+    float: none;
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
+  }
+
+  .header-menu-list > li {
+    flex: 1 1 0;
+    min-width: 0;
+    height: 100%;
+  }
+
+  .header-menu-list .dropdown-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0;
+    color: #fff;
+    background-color: transparent;
+    font-size: 2.5vh;
+    font-size: 2.5dvh;
+    text-align: center;
+  }
+
+  .header-menu-list .dropdown-item:hover,
+  .header-menu-list .dropdown-item:focus,
+  .header-menu-list .dropdown-item:focus-visible,
+  .header-menu-list .dropdown-item.active,
+  .header-menu-list .dropdown-item:active {
+    color: #fff;
+    background-color: transparent;
+  }
+
+  .header-menu-list .dropdown-item:hover,
+  .header-menu-list .dropdown-item:focus-visible {
+    text-decoration: underline;
+  }
+
+  .footer-phone span {
+    font-size: 4vh;
+    font-size: 4dvh;
+  }
 }

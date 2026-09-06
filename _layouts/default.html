@@ -13,59 +13,65 @@
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />  </head>
   <body>
     <header>
-      <a class="header-logo" href="{{ '/' | relative_url }}">
+      <div class="container header-inner">
+        <a class="header-logo" href="{{ '/' | relative_url }}">
+          <img
+            src="{{ '/assets/images/logo.png' | relative_url }}"
+            width="256"
+            height="256"
+            alt="На главную страницу"
+          />
+        </a>
         <img
-          src="{{ '/assets/images/logo.png' | relative_url }}"
-          width="256"
-          height="256"
-          alt="На главную страницу"
+          class="header-title"
+          src="{{ '/assets/images/dev-praktika.png' | relative_url }}"
+          width="500"
+          height="90"
+          alt="dev praktika"
         />
-      </a>
-      <img
-        class="header-title"
-        src="{{ '/assets/images/dev-praktika.png' | relative_url }}"
-        width="500"
-        height="90"
-        alt="dev praktika"
-      />
-      <nav class="header-menu dropdown">
-        <button
-          class="header-menu-toggle"
-          type="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-          aria-label="Меню сайта"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <ul class="dropdown-menu dropdown-menu-end">
-          <li><a class="dropdown-item" href="{{ '/approach.html' | relative_url }}">Подход</a></li>
-          <li><a class="dropdown-item" href="{{ '/educators/' | relative_url }}">Ведущие</a></li>
-          <li><a class="dropdown-item" href="{{ '/workshops/' | relative_url }}">Практикумы</a></li>
-          <li><a class="dropdown-item" href="{{ '/schedule/' | relative_url }}">Расписание</a></li>
-          <li><a class="dropdown-item" href="{{ '/archive/' | relative_url }}">Архив</a></li>
-        </ul>
-      </nav>
+        <nav class="header-menu dropdown">
+          <button
+            class="header-menu-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            aria-label="Меню сайта"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <ul class="header-menu-list dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="{{ '/approach.html' | relative_url }}">Подход</a></li>
+            <li><a class="dropdown-item" href="{{ '/educators/' | relative_url }}">Ведущие</a></li>
+            <li><a class="dropdown-item" href="{{ '/workshops/' | relative_url }}">Практикумы</a></li>
+            <li><a class="dropdown-item" href="{{ '/schedule/' | relative_url }}">Расписание</a></li>
+            <li><a class="dropdown-item" href="{{ '/archive/' | relative_url }}">Архив</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <main>
-      {{ content }}
+      <div class="container">
+        {{ content }}
+      </div>
     </main>
     <footer>
-      <div class="footer-phone-slot">
-        <a class="footer-phone" href="tel:+79852557973"><span>+7 (985) 255-79-73</span></a>
-      </div>
-      <div class="footer-icons">
-        <a href="https://t.me/markshevchenko">
-          <img src="{{ '/assets/images/telegram.png' | relative_url }}" width="65" height="64" alt="Telegram" />
-        </a>
-        <a href="https://max.ru/u/f9LHodD0cOKlXiTIgNfTlN3ru3PnblLD41RwzzgaRSGXKrwjacxRWLlTOMA">
-          <img src="{{ '/assets/images/max.png' | relative_url }}" width="67" height="67" alt="Max" />
-        </a>
-        <a href="mailto:markshevchenko@inbox.ru">
-          <img src="{{ '/assets/images/email.png' | relative_url }}" width="80" height="80" alt="E-mail" />
-        </a>
+      <div class="container footer-inner">
+        <div class="footer-phone-slot">
+          <a class="footer-phone" href="tel:+79852557973"><span>+7 (985) 255-79-73</span></a>
+        </div>
+        <div class="footer-icons">
+          <a href="https://t.me/markshevchenko">
+            <img src="{{ '/assets/images/telegram.png' | relative_url }}" width="65" height="64" alt="Telegram" />
+          </a>
+          <a href="https://max.ru/u/f9LHodD0cOKlXiTIgNfTlN3ru3PnblLD41RwzzgaRSGXKrwjacxRWLlTOMA">
+            <img src="{{ '/assets/images/max.png' | relative_url }}" width="67" height="67" alt="Max" />
+          </a>
+          <a href="mailto:markshevchenko@inbox.ru">
+            <img src="{{ '/assets/images/email.png' | relative_url }}" width="80" height="80" alt="E-mail" />
+          </a>
+        </div>
       </div>
     </footer>
     <script
