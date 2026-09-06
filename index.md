@@ -23,7 +23,7 @@ title: dev praktika
   {% for event in upcoming_events limit: 3 %}
     {% assign workshop = site.workshops | where: "slug", event.  workshop | first %}
     <article class="mb-4">
-      <h3 class="text-center"><a href="{{ event.url |   relative_url }}">{{ workshop.title }}</a></h3>
+      <h3><a class="text-black" href="{{ event.url |   relative_url }}">{{ workshop.title }}</a></h3>
       <p>{{ event.date | date: "%d.%m.%Y" }} {{ event.date |   date: "%H:%M" }}</p>
       <p>{{ workshop.description }}</p>
       <p class="fs-3 text-end price">
