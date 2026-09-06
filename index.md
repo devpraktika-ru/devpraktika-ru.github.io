@@ -15,7 +15,8 @@ title: dev praktika
 
 {% if upcoming_events.size == 0 %}
   <p class="border border-secondary border-dashed p-3">
-    В ближайшее время ничего не будет.
+    В ближайшее время мероприятий не будет.
+    Не переживайте, следите за нашим расписанием на networkly.
   </p>
 {% else %}
   <h2>Ближайшие встречи</h2>
