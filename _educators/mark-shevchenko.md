@@ -24,5 +24,6 @@ description: "Стаж 30+ лет. Языки: Go, C#, F#, Rust."
 
 Ведёт:
 * [Архитектурный воркшоп]({% link _workshops/architecture-workshop.md %})
-* [Код-ретрит]({% link _workshops/code-retreat.md %})
+* [Архитектурная ката]({% link _workshops/architecture-kata.md %})
+* [Решение задачек]({% link _workshops/mob-coding.md %})
 * [Готовим технический доклад]({% link _workshops/working-on-tech-talk.md %})
