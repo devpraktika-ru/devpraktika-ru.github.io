@@ -13,9 +13,10 @@ title: "Расписание"
     Не переживайте, следите за нашим расписанием на networkly.
   </p>
 {% else %}
+  <div class="card-list">
   {% for event in upcoming_events %}
     {% assign workshop = site.workshops | where: "slug", event.  workshop | first %}
-    <article class="mb-4">
+    <article>
       <h3><a class="text-black" href="{{ event.url |   relative_url }}">{{ workshop.title }}</a></h3>
       <p class="small">📅 {{ event.date | date: "%d.%m.%Y" }} ⏰ {{ event.date | date: "%H:%M" }}</p>
       <p><em>{{ workshop.description }}</em></p>
@@ -37,4 +38,5 @@ title: "Расписание"
       </div>
     </article>
   {% endfor %}
+  </div>
 {% endif %}

@@ -14,9 +14,11 @@ title: "Практикумы"
 
 Кроме того, мы постоянно работаем над новыми темами.
 
+<div class="card-list">
 {% for workshop in site.workshops %}
-  <article class="mb-4">
+  <article>
     <h3><a class="text-black" href="{{ workshop.url | relative_url }}">{{ workshop.title }}</a></h3>
     <p><em>{{ workshop.description }}</em></p>
   </article>
 {% endfor %}
+</div>

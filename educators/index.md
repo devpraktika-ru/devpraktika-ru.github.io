@@ -15,8 +15,9 @@ title: "Ведущие"
 Посмотрите его видео.
 Посмотрите видео разных ведущих, чтобы выбрать того, кто больше вам импонирует.
 
+<div class="card-list">
 {% for educator in sorted_educators %}
-  <article class="mb-4">
+  <article>
     <h3><a class="text-black" href="{{ educator.url | relative_url }}">{{ educator.givenName }} {{ educator.familyName }}</a></h3>
     <img class="educator"
          witdth="80"
@@ -26,3 +27,4 @@ title: "Ведущие"
     <p><em>{{ educator.description }}</em></p>
   </article>
 {% endfor %}
+</div>
