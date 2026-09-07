@@ -25,8 +25,8 @@ title: Архив
       {% for educator_slug in event.educators %}
         {% assign educator = site.educators | where: "slug",   educator_slug | first %}
         <div class="col text-center">
-          <img class="img-thumbnail" src="{{ educator.  thumbnail }}" alt="{{ educator.givenName }} {{   educator.familyName }}" width="80" height="80">
-          <p>{{ educator.givenName }} {{ educator.familyName }}  </p>
+          <img class="img-thumbnail" src="{{ educator.  thumbnail }}" alt="{{ educator.title }}" width="80" height="80">
+          <p>{{ educator.title }}</p>
         </div>
       {% endfor %}
     </div>

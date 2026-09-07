@@ -7,7 +7,7 @@ layout: default
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{% link educators/index.md %}">Ведущие</a></li>
-        <li class="breadcrumb-item active" aria-current="page">{{ page.givenName }} {{ page.familyName }}</li>
+        <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
       </ol>
     </nav>
   </div>
@@ -15,7 +15,7 @@ layout: default
 
 <div class="row w-100">
   <div class="bg-white col-12">
-    <h1>{{ page.givenName }} {{ page.familyName }}</h1>
+    <h1>{{ page.title }}</h1>
     <p>|
       {% if page.github %}
         <a href="https://github.com/{{ page.github }}/">GitHub</a> |
@@ -28,7 +28,7 @@ layout: default
     {% if page.image %}
     <p><img class="educator float-start me-2 mb-2"
             src="{{ page.thumbnail }}"
-            alt="{{ page.givenName }} {{ page.familyName }}"
+            alt="{{ page.title }}"
         /></p>
     {% endif %}
 

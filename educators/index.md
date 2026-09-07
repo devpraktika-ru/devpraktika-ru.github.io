@@ -3,7 +3,7 @@ layout: default
 title: Ведущие
 ---
 
-{% assign sorted_educators = site.educators | sort: "givenName" | sort: "familyName" %}
+{% assign sorted_educators = site.educators | sort: "title" %}
 
 # Ведущие
 
@@ -18,12 +18,12 @@ title: Ведущие
 <div class="card-list">
 {% for educator in sorted_educators %}
   <article>
-    <p class="fs-5"><a class="text-black" href="{{ educator.url | relative_url }}">{{ educator.givenName }} {{ educator.familyName }}</a></p>
+    <p class="fs-5"><a class="text-black" href="{{ educator.url | relative_url }}">{{ educator.title }}</a></p>
     <img class="educator"
          witdth="80"
          height="80"
          src="{{ educator.thumbnail }}"
-         alt="{{ educator.givenName }} {{ educator.familyName }}" />
+         alt="{{ educator.title }}" />
     <p><em>{{ educator.description }}</em></p>
   </article>
 {% endfor %}

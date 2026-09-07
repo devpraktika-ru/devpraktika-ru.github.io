@@ -1,6 +1,5 @@
 ---
-givenName: Антон
-familyName: Стеканов
+title: Антон Стеканов
 github: anton0xf
 telegram: anton0xf
 thumbnail: "https://github.com/user-attachments/assets/17fc479b-5d0c-4036-9ab6-fafacbc1629d"

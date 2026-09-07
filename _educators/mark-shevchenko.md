@@ -1,6 +1,5 @@
 ---
-givenName: Марк
-familyName: Шевченко
+title: Марк Шевченко
 github: markshevchenko
 telegram: markshevchenko
 thumbnail: "https://github.com/user-attachments/assets/97541145-b703-4f1f-9b7b-dd42077df528"
