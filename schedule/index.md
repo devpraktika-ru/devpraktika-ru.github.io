@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Расписание"
+title: Расписание
 ---
 
 {% assign upcoming_events = site.posts | where_exp: "event", "event.past == false" | sort: "date" %}
@@ -8,9 +8,9 @@ title: "Расписание"
 # Расписание
 
 {% if upcoming_events.size == 0 %}
-  <p>
+  <p class="border border-secondary border-dashed p-3">
     В ближайшее время мероприятий не будет.
-    Не переживайте, следите за нашим расписанием на networkly.
+    Не переживайте, следите за нашим расписанием на [networkly](https://networkly.app/community/devpraktika).
   </p>
 {% else %}
   <div class="card-list">

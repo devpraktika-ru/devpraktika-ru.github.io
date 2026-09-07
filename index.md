@@ -1,6 +1,5 @@
 ---
 layout: default
-title: dev praktika
 ---
 
 {% assign upcoming_events = site.posts | where_exp: "event", "event.date >= site.time" | sort: "date" %}
@@ -9,9 +8,9 @@ title: dev praktika
 
 <div class="home-intro" markdown="1">
 
-<img class="home-illustration" src="https://github.com/user-attachments/assets/dbd410bd-6927-463b-ad68-f70a17a9425b" width="1200" height="900" alt="Практикумы для программистов">
+![Практикумы для программистов](https://github.com/user-attachments/assets/dbd410bd-6927-463b-ad68-f70a17a9425b){: .home-illustration  width="1200" height="900"}
 
-Архитектурные воркшопы, код-ретриты, лайв-кодинг, быстрое введение в языки программирования — по вечерам и в выходные.
+Архитектурные воркшопы, лайв-кодинг, быстрое введение в языки программирования — по вечерам и в выходные.
 
 Пишем небольшие проекты промышленного уровня.
 Проектируем архитектуру веб-приложений.
@@ -23,7 +22,7 @@ title: dev praktika
 {% if upcoming_events.size == 0 %}
   <p class="border border-secondary border-dashed p-3">
     В ближайшее время мероприятий не будет.
-    Не переживайте, следите за нашим расписанием на networkly.
+    Не переживайте, следите за нашим расписанием на [networkly](https://networkly.app/community/devpraktika).
   </p>
 {% else %}
   <h2>Ближайшие встречи</h2>

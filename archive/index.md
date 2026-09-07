@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Архив"
+title: Архив
 ---
 
 {% assign outgoing_events = site.posts | where_exp: "event", "event.date < site.time" | sort: "date" %}

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Ведущие"
+title: Ведущие
 ---
 
 {% assign sorted_educators = site.educators | sort: "givenName" | sort: "familyName" %}
