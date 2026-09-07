@@ -112,7 +112,8 @@ main .container > :last-child {
   display: flow-root;
 }
 
-img.educator.float-start {
+img.educator.float-start,
+img.workshop.float-start {
   width: 33.333%;
   height: auto;
 }
@@ -222,7 +223,8 @@ footer {
     margin-bottom: 0.5rem;
   }
 
-  img.educator.float-start {
+  img.educator.float-start,
+  img.workshop.float-start {
     width: 25%;
   }
 
