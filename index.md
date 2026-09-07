@@ -9,7 +9,7 @@ title: dev praktika
 
 <div class="home-intro" markdown="1">
 
-<img class="home-illustration" src="{{ '/assets/images/arc-kata.jpg' | relative_url }}" width="1200" height="900" alt="Участники практикума обсуждают архитектуру за столом">
+<img class="home-illustration" src="https://github.com/user-attachments/assets/dbd410bd-6927-463b-ad68-f70a17a9425b" width="1200" height="900" alt="Практикумы для программистов">
 
 Архитектурные воркшопы, код-ретриты, лайв-кодинг, быстрое введение в языки программирования — по вечерам и в выходные.
 
