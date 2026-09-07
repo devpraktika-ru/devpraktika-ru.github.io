@@ -3,7 +3,7 @@ title: Антон Стеканов
 github: anton0xf
 telegram: anton0xf
 thumbnail: "https://github.com/user-attachments/assets/17fc479b-5d0c-4036-9ab6-fafacbc1629d"
-image: "https://github.com/user-attachments/assets/318cd753-d7bc-45a3-9f72-e25d1329d4be"
+image: "https://github.com/user-attachments/assets/aae842d8-c4b9-45c1-a4d3-5be1f9cfb917"
 description: "Стаж 15 лет. Языки: Java, Scala"
 ---
 
