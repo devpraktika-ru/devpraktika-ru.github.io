@@ -212,9 +212,13 @@ footer {
 
   .home-illustration {
     float: left;
-    width: 33.333%;
+    width: 50%;
     margin-right: 1rem;
     margin-bottom: 0.5rem;
+  }
+
+  .home-intro > p:has(> .home-illustration) {
+    margin: 0;
   }
 
   .card-list {
