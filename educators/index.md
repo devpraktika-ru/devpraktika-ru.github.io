@@ -19,9 +19,8 @@ title: Ведущие
 {% for educator in sorted_educators %}
   <article>
     <p class="fs-5"><a class="text-black" href="{{ educator.url | relative_url }}">{{ educator.title }}</a></p>
-    <img class="educator"
-         witdth="80"
-         height="80"
+    <img witdth="90"
+         height="120"
          src="{{ educator.thumbnail }}"
          alt="{{ educator.title }}" />
     <p><em>{{ educator.description }}</em></p>
