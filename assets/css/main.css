@@ -101,6 +101,17 @@ main .container > :last-child {
   margin-bottom: 0;
 }
 
+.home-illustration {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.home-intro {
+  display: flow-root;
+}
+
 .card-list {
   display: grid;
   grid-template-columns: 1fr;
@@ -197,6 +208,13 @@ footer {
 @media (hover: hover) and (pointer: fine) {
   .container {
     max-width: min(1320px, 50vw);
+  }
+
+  .home-illustration {
+    float: left;
+    width: 33.333%;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   .card-list {
