@@ -3,6 +3,7 @@ title: Архитектурный воркшоп
 description: |
   Архитектурные воркшопы для мидл и сеньор-программистов.
   Проходят в выходной день, длятся 8 часов, затрагивают этапы Proof of Concept, MVP и Highload.
+image: "https://github.com/user-attachments/assets/ae9dcf00-08f2-4ab1-be5b-d82d56afbcfd"
 ---
 
 По [статистике](https://prog.msk.ru/2026/02/27/good-work-bad-work/), при выборе нового места работы, программисты в первую очередь смотрят на квалификацию будущих коллег.
