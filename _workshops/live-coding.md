@@ -3,6 +3,7 @@ title: Лайв кодинг
 description: |
   Решаем задачи с leetcode, hackerrank, codekata.
   Осваиваем практики, языки программирования и секретные приёмы.
+image: "https://github.com/user-attachments/assets/a5bff8e3-8f52-4d1e-90fa-40121b8f6959"
 ---
 
 Обычно собираемся онлайн, иногда — офлайн.
