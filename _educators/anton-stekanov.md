@@ -27,4 +27,4 @@ description: "Стаж 15 лет. Языки: Java, Scala"
 Ведёт:
 * [Архитектурный воркшоп]({% link _workshops/architecture-workshop.md %})
 * [Архитектурная ката]({% link _workshops/architecture-kata.md %})
-* [Решение задачек]({% link _workshops/mob-coding.md %})
+* [Лайв кодинг]({% link _workshops/live-coding.md %})

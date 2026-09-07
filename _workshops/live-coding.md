@@ -1,5 +1,5 @@
 ---
-title: Live Coding
+title: Лайв кодинг
 description: |
   Решаем задачи с leetcode, hackerrank, codekata.
   Осваиваем практики, языки программирования и секретные приёмы.
