@@ -14,13 +14,11 @@ title: Архив
     <p class="fs-5"><a class="text-black" href="{{ event.url |   relative_url }}">{{ workshop.title }}</a></p>
     <p class="small">📅 {{ event.date | date: "%d.%m.%Y" }} ⏰ {{ event.date | date: "%H:%M" }}</p>
     <p><em>{{ workshop.description }}</em></p>
-    <p class="fs-3 text-end price">
-      {% if event.price == 0 %}
-        бесплатно
-      {% else %}
-        {{ event.price }}₽
-      {% endif %}
-    </p>
+    {% if event.price == 0 %}
+      <p class="price">Мероприятие бесплатное.</p>
+    {% else %}
+      <p>Стоимость: <span class="price">{{ event.price }}₽</p>
+    {% endif %}
     <div class="row">
       {% for educator_slug in event.educators %}
         {% assign educator = site.educators | where: "slug",   educator_slug | first %}
