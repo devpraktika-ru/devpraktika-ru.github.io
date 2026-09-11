@@ -28,7 +28,7 @@ layout: default
       <p class="fs-3 text-end">Оценка: {% if page.mark %}{{ page.mark }}{% else %}?{% endif %}</p>
     {% else %}
       <p class="fs-3 text-end price">
-        {% if event.price = 0 %}
+        {% if event.price == 0 %}
           бесплатно
         {% else %}
           {{ event.price }}₽
