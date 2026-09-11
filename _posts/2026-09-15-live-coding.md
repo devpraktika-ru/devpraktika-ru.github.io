@@ -2,7 +2,7 @@
 date: 2026-09-15T19:30:00+03:00
 title: Online Live Coding
 price: 0
-registration: https://networkly.app/event/6847
+networkly_id: 6847
 educators:
   - anton-stekanov
 ---

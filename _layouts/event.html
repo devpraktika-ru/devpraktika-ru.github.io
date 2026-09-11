@@ -29,11 +29,11 @@ layout: default
     {% else %}
       <div class="row">
         <div class="col-6">
-          {% if page.registration %}
-          <form action="{{ page.registration }}" method="get">
+          {% if page.networkly_id %}
+          <form action="https://networkly.app/event/{{ page.networkly_id }}" method="get">
             <input type="hidden" id="utm_source" name="utm_source" value="devpraktka.ru">
             <input type="hidden" id="utm_medium" name="utm_medium" value="organic">
-            <input type="hidden" id="utm_campaign" name="utm_campaign" value="{{ page.date | date: '%Y-%m-%d' }}-{{ page.slug }}">
+            <input type="hidden" id="utm_campaign" name="utm_campaign" value="event_{{ page.networkly_id }}_announcement">
             <button class="btn btn-primary" type="submit">Записаться</button>
           </form>
           <script>
