@@ -2,7 +2,7 @@
 layout: default
 ---
 
-{% assign workshop = site.workshops | where: "slug", page.workshop | first %}
+{% assign workshop = site.workshops | where: "slug", page.slug | first %}
 
 <div class="row w-100">
   <div class="bg-white col-12">
@@ -36,6 +36,17 @@ layout: default
             <input type="hidden" id="utm_campaign" name="utm_campaign" value="{{ page.date | date: '%Y-%m-%d' }}-{{ page.slug }}">
             <button class="btn btn-primary" type="submit">Записаться</button>
           </form>
+          <script>
+            (function() {
+              const params = new URLSearchParams(location.search);
+              ['utm_source', 'utm_medium', 'utm_campaign'].forEach(function(name) {
+                const value = params.get(name);
+                if (value !== null) {
+                  document.getElementById(name).value = value;
+                }
+              });
+            })();
+          </script>
           {% endif %}
         </div>
         <div class="col-6">
