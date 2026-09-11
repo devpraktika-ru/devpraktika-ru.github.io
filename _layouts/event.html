@@ -27,14 +27,21 @@ layout: default
     {% if page.date < site.time %}
       <p class="fs-3 text-end">Оценка: {% if page.mark %}{{ page.mark }}{% else %}?{% endif %}</p>
     {% else %}
-    <p class="fs-3 text-end price">
-      {% if event.price = 0 %}
-        бесплатно
-      {% else %}
-        {{ event.price }}₽
+      <p class="fs-3 text-end price">
+        {% if event.price = 0 %}
+          бесплатно
+        {% else %}
+          {{ event.price }}₽
+        {% endif %}
+      </p>
+      {% if page.registration %}
+        <form action="{{ page.registration }}" method="get">
+          <input type="hidden" id="utm_source" name="utm_source" value="devpraktka.ru">
+          <input type="hidden" id="utm_medium" name="utm_medium" value="organic">
+          <input type="hidden" id="utm_campaign" name="utm_campaign" value="{{ page.slug }}">
+          <button type="submit">Записаться</button>
+        </form>
       {% endif %}
-    </p>
-    <p>Запись на мероприятие.</p>
     {% endif %}
   </div>
 </div>
