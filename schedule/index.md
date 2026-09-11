@@ -20,7 +20,7 @@ title: Расписание
       <p class="fs-5"><a class="text-black" href="{{ event.url |   relative_url }}">{{ workshop.title }}</a></p>
       <p class="small">📅 {{ event.date | date: "%d.%m.%Y" }} ⏰ {{ event.date | date: "%H:%M" }}</p>
       <p><em>{{ workshop.description }}</em></p>
-      <p class="fs-3 text-end price">
+      <p class="fw-bold text-end price">
         {% if event.price == 0 %}
           бесплатно
         {% else %}
