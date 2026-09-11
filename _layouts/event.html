@@ -25,21 +25,25 @@ layout: default
     <p class="small">📅 {{ page.date | date: "%d.%m.%Y" }} ⏰ {{ page.date | date: "%H:%M" }}</p>
     {{ page.content | markdownify }}
     {% if page.date < site.time %}
-      <p class="fw-bold text-end">Оценка: {% if page.mark %}{{ page.mark }}{% else %}?{% endif %}</p>
+      <p class="fs-4 text-end">Оценка: {% if page.mark %}{{ page.mark }}{% else %}?{% endif %}</p>
     {% else %}
-      {% if page.price == 0 %}
-        <p class="price">Мероприятие бесплатное.</p>
-      {% else %}
-        <p>Стоимость: <span class="price">{{ event.price }}₽</p>
-      {% endif %}
-      {% if page.registration %}
-        <form action="{{ page.registration }}" method="get">
-          <input type="hidden" id="utm_source" name="utm_source" value="devpraktka.ru">
-          <input type="hidden" id="utm_medium" name="utm_medium" value="organic">
-          <input type="hidden" id="utm_campaign" name="utm_campaign" value="{{ page.date | date: '%Y-%m-%d' }}-{{ page.slug }}">
-          <button class="btn btn-primary" type="submit">Записаться</button>
-        </form>
-      {% endif %}
+      <div class="row">
+        <div class="col-6">
+          {% if page.registration %}
+          <form action="{{ page.registration }}" method="get">
+            <input type="hidden" id="utm_source" name="utm_source" value="devpraktka.ru">
+            <input type="hidden" id="utm_medium" name="utm_medium" value="organic">
+            <input type="hidden" id="utm_campaign" name="utm_campaign" value="{{ page.date | date: '%Y-%m-%d' }}-{{ page.slug }}">
+            <button class="btn btn-primary" type="submit">Записаться</button>
+          </form>
+          {% endif %}
+        </div>
+        <div class="col-6">
+          {% if event.price > 0 %}
+          <p class="fs-4 text-end price">{{ event.price }}₽</p>
+          {% endif %}
+        </div>
+      </div>
     {% endif %}
   </div>
 </div>
