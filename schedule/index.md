@@ -3,7 +3,8 @@ layout: default
 title: Расписание
 ---
 
-{% assign upcoming_events = site.posts | where_exp: "event", "event.past == false" | sort: "date" %}
+{% assign upcoming_events = site.posts | where_exp: "event", "event.date >= site.time" | sort: "date" %}
+
 
 # Расписание
 
@@ -23,7 +24,7 @@ title: Расписание
       {% if event.price == 0 %}
         <p class="price">Мероприятие бесплатное.</p>
       {% else %}
-        <p>Стоимость: <span class="price">{{ event.price }}₽</p>
+        <p>Стоимость: <span class="price">{{ event.price }}₽</span>.</p>
       {% endif %}
       <div class="row">
         {% for educator_slug in event.educators %}
