@@ -13,10 +13,10 @@ layout: default
 Архитектурные воркшопы, лайв-кодинг, быстрое введение в языки программирования — по вечерам и в выходные.
 
 Пишем небольшие проекты промышленного уровня.
-Проектируем архитектуру веб-приложений.
+Прорабатываем архитектуру веб-приложений.
 Решаем задачи, практикуя подход «сначала тесты».
 
-У наших ведущих большой практический опыт и — кроме того — статьи на Хабре, видеоуроки в YouTube и ответы на Stack Overflow.
+У наших ведущих большой практический опыт и — кроме того — статьи на Хабре, видеоуроки в YouTube, ответы на Stack Overflow и бесчисленные воркшопы.
 </div>
 
 {% if upcoming_events.size == 0 %}
@@ -32,7 +32,7 @@ layout: default
     <article>
       <p class="fs-5"><a class="text-black" href="{{ event.url |   relative_url }}">{{ workshop.title }}</a></p>
       <p class="small">📅 {{ event.date | date: "%d.%m.%Y" }} ⏰ {{ event.date | date: "%H:%M" }}</p>
-      <p><em>{{ workshop.description }}</em></p>
+      <p><em>{{ event.description }}</em></p>
       {% if event.price > 0 %}
         <p class="fs-4 text-end price">{{ event.price }}₽</p>
       {% endif %}

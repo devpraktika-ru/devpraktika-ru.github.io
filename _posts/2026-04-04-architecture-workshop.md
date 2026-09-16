@@ -3,6 +3,7 @@ date: 2026-04-04T11:00:00+03:00
 title: Архитектурный воркшоп 4 апреля 2026 года
 price: 3000
 mark: 4.2
+description: Бекенд для торговли ценными бумагами
 educators:
   - anton-stekanov
   - mark-shevchenko

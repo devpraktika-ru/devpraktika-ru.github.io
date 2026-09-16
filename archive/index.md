@@ -13,7 +13,7 @@ title: Архив
   <article>
     <p class="fs-5"><a class="text-black" href="{{ event.url |   relative_url }}">{{ workshop.title }}</a></p>
     <p class="small">📅 {{ event.date | date: "%d.%m.%Y" }} ⏰ {{ event.date | date: "%H:%M" }}</p>
-    <p><em>{{ workshop.description }}</em></p>
+    <p><em>{{ event.description }}</em></p>
     {% if event.price > 0 %}
       <p class="fs-4 text-end price">{{ event.price }}₽</p>
     {% endif %}

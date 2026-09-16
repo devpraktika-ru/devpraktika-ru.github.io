@@ -3,6 +3,7 @@ date: 2026-09-17T19:30:00+03:00
 title: Online Live Coding
 price: 0
 networkly_id: 6847
+description: Задачи с LeetCode на Java
 educators:
   - anton-stekanov
 ---
