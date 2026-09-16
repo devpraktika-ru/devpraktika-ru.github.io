@@ -3,7 +3,7 @@ date: 2026-09-22T19:00:00+03:00
 title: Online Live Coding
 price: 0
 networkly_id: 6867
-description: Функции работы с датой на Go
+description: Пишем функции для работы с датой на языке Go.
 educators:
   - mark-shevchenko
 ---
