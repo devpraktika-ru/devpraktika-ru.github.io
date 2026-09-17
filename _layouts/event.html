@@ -26,6 +26,7 @@ layout: default
     {{ page.content | markdownify }}
     {% if page.date < site.time %}
       <p class="fs-4 text-end">Оценка: {% if page.mark %}{{ page.mark }}{% else %}?{% endif %}</p>
+      {% include video.html %}
     {% else %}
       <div class="row">
         <div class="col-6">

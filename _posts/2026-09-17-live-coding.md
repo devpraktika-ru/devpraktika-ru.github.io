@@ -4,6 +4,8 @@ title: Online Live Coding
 price: 0
 networkly_id: 6847
 description: Решаем задачи с LeetCode на языке Java.
+vkvideo: oid=-241467855&id=456239017&hash=44feac8b28723800&hd=3
+youtube: NdIc9K3A0RQ?si=l3Hl0LI2hW02aFAn
 educators:
   - anton-stekanov
 ---
