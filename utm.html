@@ -43,7 +43,9 @@ function updateLink() {
   const source = document.getElementById('source').value;
   const medium = document.getElementById('medium').value;
   const campaign = document.getElementById('campaign').value;
-  const link = document.getElementById('campaign').label;
+  const datalist = document.getElementById('campaign-list');
+  const option = Array.from(datalist.options).find(opt => opt.value === campaign);
+  const link = option ? option.textContent : '';
   const linkElement = document.getElementById('link');
 
   if (!source || !medium || !campaign || !link) {
