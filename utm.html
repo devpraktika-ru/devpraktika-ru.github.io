@@ -5,9 +5,9 @@ title: UTM-генератор
 
 {% assign upcoming_events = site.posts | where_exp: "event", "event.date >= site.time" | sort: "date" %}
 
-<div class="form-floating mb-3">
-  <input type="text" class="form-control" id="source" placeholder="tg_progmsk" list="source-list">
+<div class="mb-3">
   <label for="source">utm_source</label>
+  <input type="text" class="form-control" id="source" placeholder="tg_progmsk" list="source-list">
 
   <datalist id="source-list">
     <option value="devpraktika.ru">
@@ -19,20 +19,47 @@ title: UTM-генератор
     <option value="calendar">
   </datalist>
 
-  <input type="text" class="form-control" id="medium" placeholder="social" list="medium-list">
   <label for="medium">utm_medium</label>
+  <input type="text" class="form-control" id="medium" placeholder="social" list="medium-list">
 
   <datalist id="medium-list">
     <option value="organic">
     <option value="social">
   </datalist>
 
-  <input type="text" class="form-control" id="campaign" placeholder="" list="campaign-list">
   <label for="medium">utm_campaign</label>
+  <input type="text" class="form-control" id="campaign" placeholder="" list="campaign-list">
 
-  <datalist id="medium-list">
+  <datalist id="campaign-list">
     {% for event in upcoming_events %}
-    <option value="event_{{ event.networkly_id }}_announcement">
+    <option value="event_{{ event.networkly_id }}_announcement">{{ event.slug }}</option>
     {% endfor %}
   </datalist>
 </div>
+<p id="link"></p>
+
+<script>
+function updateLink() {
+  const source = document.getElementById('source').value;
+  const medium = document.getElementById('medium').value;
+  const campaign = document.getElementById('campaign').value;
+  const link = document.getElementById('campaign').innerText;
+  const linkElement = document.getElementById('link');
+
+  if (!source || !medium || !campaign || !link) {
+    linkElement.innerHTML = '';
+    return;
+  }
+
+  const url = `https://devpratkika.ru/${slug}/?utm_source=${encodeURIComponent(source)}&utm_medium=${encodeURIComponent(medium)}&utm_campaign=${encodeURIComponent(campaign)}`;
+  linkElement.innerHTML = `<a href="${url}" target="_blank">${url}</a>`;
+}
+
+document.getElementById('source').addEventListener('change', updateLink);
+document.getElementById('medium').addEventListener('change', updateLink);
+document.getElementById('campaign').addEventListener('change', updateLink);
+
+document.getElementById('source').addEventListener('input', updateLink);
+document.getElementById('medium').addEventListener('input', updateLink);
+document.getElementById('campaign').addEventListener('input', updateLink);
+</script>
