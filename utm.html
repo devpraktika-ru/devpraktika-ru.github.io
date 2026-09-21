@@ -32,7 +32,7 @@ title: UTM-генератор
 
   <datalist id="campaign-list">
     {% for event in upcoming_events %}
-    <option value="event_{{ event.networkly_id }}_announcement">{{ event.slug }}</option>
+    <option value="event_{{ event.networkly_id }}_announcement">{{ event.date | date: "%Y-%m-%d" }}-{{ event.slug }}</option>
     {% endfor %}
   </datalist>
 </div>
