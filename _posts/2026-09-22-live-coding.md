@@ -1,6 +1,6 @@
 ---
 date: 2026-09-22T19:00:00+03:00
-title: Online Live Coding
+title: Online Live Coding, язык Go.
 price: 0
 networkly_id: 6867
 description: Пишем функции для работы с датой на языке Go.
