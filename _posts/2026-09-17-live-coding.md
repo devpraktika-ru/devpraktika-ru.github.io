@@ -1,9 +1,9 @@
 ---
 date: 2026-09-17T19:30:00+03:00
-title: Online Live Coding, язык Java
+title: Решаем задачи с LeetCode на языке Java
 price: 0
 networkly_id: 6847
-description: Решаем задачи с LeetCode на языке Java.
+description: Максимальная разница между элементами в массиве. Максимальная ширина «уступа» (разница между индексами).
 vkvideo: oid=-241467855&id=456239017&hash=44feac8b28723800&hd=3
 youtube: NdIc9K3A0RQ?si=l3Hl0LI2hW02aFAn
 educators:

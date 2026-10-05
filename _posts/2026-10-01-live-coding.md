@@ -1,9 +1,11 @@
 ---
 date: 2026-10-01T19:00:00+03:00
-title: Online Live Coding, язык Go
+title: Работаем с деревьями на языке Go
 price: 0
 networkly_id: 6887
-description: Решаем задачи с LeetCode на языке Go.
+description: Высота дерева. Диаметр дерева. Путь с одинаковыми значениями.
+vkvideo: oid=-215758020&id=456239146&hash=29ccc571aeaed23e&hd=3
+youtube: UsOf6QMD52s?si=k9czKLeQeqMNoQXd
 educators:
   - anton-stekanov
 ---
@@ -15,5 +17,3 @@ educators:
 
 Пишем на **Go**.
 Ведущий **Антон Стеканов** — опытный Java-разработчик, успевший поработать (а до этого пройти собеседование) в Яндексе, ТБанке и Mail.ru group.
-
-Мероприятие проходит онлайн, ссылка на звонок в Контур.Толке будет доступна после регистрации.

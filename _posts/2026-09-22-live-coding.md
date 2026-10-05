@@ -1,11 +1,11 @@
 ---
 date: 2026-09-22T19:00:00+03:00
-title: Online Live Coding, язык Go.
+title: Пишем функции для работы с датой на языке Go
 price: 0
 networkly_id: 6867
 vkvideo: oid=-241467855&id=456239018&hash=4e22b2b17c25b544&hd=3
 youtube: GYXSiz70kvg?si=ObS1kW-07OSR4Tec
-description: Пишем функции для работы с датой на языке Go.
+description: Конструкторы, сокрытие данных. Геттеры. День недели. Rata Die. Разность дат. Сложение даты и интервала. Вычисление даты по Rata Die.
 educators:
   - mark-shevchenko
 ---
