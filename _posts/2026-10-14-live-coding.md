@@ -3,9 +3,14 @@ date: 2026-10-14T19:00:00+03:00
 title: Работаем с деревьями с помощью TDD на языке Java
 price: 0
 networkly_id: 6984
+description: Сумма пути. Все пути.
+vkvideo: oid=-241467855&id=456239021
+youtube: iw96keRQMNs?si=pt4fs0cEJHyB7I78
 educators:
   - anton-stekanov
 ---
+
+<iframe src="https://vk.ru/video_ext.php?oid=-241467855&id=456239021&autoplay=1" width="853" height="480" style="background-color: #000" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
 
 Осваиваем практику разработки.
 
