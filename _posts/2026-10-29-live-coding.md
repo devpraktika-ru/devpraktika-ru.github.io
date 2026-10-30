@@ -3,6 +3,9 @@ date: 2026-10-29T19:00:00+03:00
 title: Работаем с деревьями с помощью TDD на языке Java
 price: 0
 networkly_id: 7066
+description: Сумма пути, варианты 2 и 3.
+vkvideo: oid=-241467855&id=456239022&hash=03471aecc2224a6c
+youtube: 6lm_iHUUdEg?si=K5EOX_g0mjQ6EFPz
 educators:
   - anton-stekanov
 ---
@@ -18,4 +21,15 @@ educators:
 
 Ведущий Антон Стеканов — опытный разработчик, успевший поработать в Яндексе, ТБанке и Mail.ru group.
 
-Мероприятие проходит онлайн, [ссылка на звонок в Контур.Толке](https://anton0xf.ktalk.ru/p892809hmub3).
+## Ссылки
+
+Git:
+* https://github.com/anton0xf/solutions/blob/main/leetcode/java/
+
+Задачи прошлой встречи
+* https://leetcode.com/problems/path-sum/
+* https://leetcode.com/problems/binary-tree-paths/
+
+Задачи сегодняшей встречи
+* https://leetcode.com/problems/path-sum-ii/
+* https://leetcode.com/problems/path-sum-iii/
