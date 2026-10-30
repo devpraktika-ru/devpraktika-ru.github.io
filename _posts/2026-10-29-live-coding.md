@@ -24,12 +24,12 @@ educators:
 ## Ссылки
 
 Git:
-* https://github.com/anton0xf/solutions/blob/main/leetcode/java/
+* [Проект](https://github.com/anton0xf/solutions/blob/main/leetcode/java/)
 
 Задачи прошлой встречи
-* https://leetcode.com/problems/path-sum/
-* https://leetcode.com/problems/binary-tree-paths/
+* [Path Sum 1](https://leetcode.com/problems/path-sum/)
+* [Binary Tree Paths](https://leetcode.com/problems/binary-tree-paths/)
 
 Задачи сегодняшей встречи
-* https://leetcode.com/problems/path-sum-ii/
-* https://leetcode.com/problems/path-sum-iii/
+* [Path Sum 2](https://leetcode.com/problems/path-sum-ii/)
+* [Path Sum 3](https://leetcode.com/problems/path-sum-iii/)
