@@ -3,7 +3,7 @@ layout: default
 title: Расписание
 ---
 
-{% assign upcoming_events = site.posts | where_exp: "event", "event.date >= site.time" | sort: "date" %}
+{% assign upcoming_events = site.posts | where_exp: "event", "event.date >= site.time" | sort: "date" | reverse %}
 
 # Расписание
 
@@ -17,12 +17,12 @@ title: Расписание
   {% for event in upcoming_events %}
     {% assign workshop = site.workshops | where: "slug", event.slug | first %}
     <article>
-      <p class="fs-5"><a class="text-black" href="{{ event.url |   relative_url }}">{{ workshop.title }}</a></p>
+      <p class="text-center fw-bold"><a class="text-black" style="height: 4.5rem; line-height: 1.5" href="{{ event.url |   relative_url }}">{{ event.title }}</a></p>
       <p class="small">📅 {{ event.date | date: "%d.%m.%Y" }} ⏰ {{ event.date | date: "%H:%M" }}</p>
       <p class="overflow-hidden" style="height: 4.5rem; line-height: 1.5;"><em>{{ event.description }}</em></p>
-      {% if event.price > 0 %}
-        <p class="fs-4 text-end price">{{ event.price }}₽</p>
-      {% endif %}
+      <p class="fs-4 text-end price">
+      {% if event.price > 0 %}{{ event.price }}₽{% else %}&nbsp;{% endif %}
+      </p>
       <div class="row">
         {% for educator_slug in event.educators %}
           {% assign educator = site.educators | where: "slug",   educator_slug | first %}

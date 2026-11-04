@@ -11,15 +11,11 @@ title: Архив
 {% for event in outgoing_events %}
   {% assign workshop = site.workshops | where: "slug", event.slug | first %}
   <article>
-    <p><a class="text-black fw-bold" href="{{ event.url |   relative_url }}">{{ event.title }}</a></p>
+    <p class="text-center fw-bold"><a class="text-black" style="height: 4.5rem; line-height: 1.5" href="{{ event.url |   relative_url }}">{{ event.title }}</a></p>
     <p class="small">📅 {{ event.date | date: "%d.%m.%Y" }} ⏰ {{ event.date | date: "%H:%M" }}</p>
-    <p class="overflow-hidden" style="height: 4.5rem; line-height: 1.5;"><em>{{ event.description }}</em></p>
+    <p class="overflow-hidden" style="height: 4.5rem; line-height: 1.5"><em>{{ event.description }}</em></p>
     <p class="fs-4 text-end price">
-    {% if event.price > 0 %}
-      {{ event.price }}₽
-    {% else %}
-      &nbsp;
-    {% endif %}
+    {% if event.price > 0 %}{{ event.price }}₽{% else %}&nbsp;{% endif %}
     </p>
     <div class="row">
       {% for educator_slug in event.educators %}
