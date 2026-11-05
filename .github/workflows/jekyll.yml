@@ -37,10 +37,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Ruby
-        # https://github.com/ruby/setup-ruby/releases/tag/v1.207.0
-        uses: ruby/setup-ruby@4a9ddd6f338a97768b8006bf671dfbad383215f4
+        # v1.207.0 does not recognize ubuntu-26.04 (current ubuntu-latest)
+        # and treats the runner as self-hosted. That image also has no Ruby 3.1
+        # builds; GitHub Pages uses Ruby 3.3.
+        # https://github.com/ruby/setup-ruby/releases/tag/v1.336.0
+        uses: ruby/setup-ruby@v1.336.0
         with:
-          ruby-version: '3.1' # Not needed with a .ruby-version file
+          ruby-version: '3.3' # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           cache-version: 0 # Increment this number if you need to re-download cached gems
       - name: Setup Pages
