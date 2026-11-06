@@ -1,14 +1,4 @@
 <ul class="nav nav-tabs" id="videoTabs" role="tablist">
-  {% if page.youtube %}
-  <li class="nav-item" role="presentation">
-    <button class="nav-link active" id="youtube-tab"
-            data-bs-toggle="tab" data-bs-target="#youtube-pane"
-            type="button" role="tab"
-            aria-controls="youtube-pane" aria-selected="true">
-      YouTube
-    </button>
-  </li>
-  {% endif %}
   {% if page.vkvideo %}
   <li class="nav-item" role="presentation">
     <button class="nav-link" id="vk-tab"
@@ -19,20 +9,19 @@
     </button>
   </li>
   {% endif %}
+  {% if page.youtube %}
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="youtube-tab"
+            data-bs-toggle="tab" data-bs-target="#youtube-pane"
+            type="button" role="tab"
+            aria-controls="youtube-pane" aria-selected="true">
+      YouTube
+    </button>
+  </li>
+  {% endif %}
 </ul>
 
 <div class="tab-content mt-3" id="videoTabsContent">
-  {% if page.youtube %}
-  <div class="tab-pane fade show active" id="youtube-pane"
-       role="tabpanel" aria-labelledby="youtube-tab">
-    <div class="ratio ratio-16x9">
-      <iframe src="https://www.youtube.com/embed/{{ page.youtube }}"
-              title="YouTube video"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
-    </div>
-  </div>
-  {% endif %}
   {% if page.vkvideo %}
   <div class="tab-pane fade" id="vk-pane"
        role="tabpanel" aria-labelledby="vk-tab">
@@ -40,6 +29,17 @@
       <iframe src="https://vkvideo.ru/video_ext.php?{{ page.vkvideo }}"
               title="VK Video"
               allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+              allowfullscreen></iframe>
+    </div>
+  </div>
+  {% endif %}
+  {% if page.youtube %}
+  <div class="tab-pane fade show active" id="youtube-pane"
+       role="tabpanel" aria-labelledby="youtube-tab">
+    <div class="ratio ratio-16x9">
+      <iframe src="https://www.youtube.com/embed/{{ page.youtube }}"
+              title="YouTube video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen></iframe>
     </div>
   </div>
