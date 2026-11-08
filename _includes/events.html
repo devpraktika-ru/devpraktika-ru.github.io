@@ -10,9 +10,9 @@
     <div class="row">
       {% for educator_slug in event.educators %}
         {% assign educator = site.educators | where: "slug", educator_slug | first %}
-        <div class="col">
+        <div class="col-6">
           <img src="{{ educator.thumbnail }}" alt="{{ educator.title }}" width="90" height="120">
-          <p>{{ educator.title }}</p>
+          <p class="text-center">{{ educator.title }}</p>
         </div>
       {% endfor %}
     </div>
