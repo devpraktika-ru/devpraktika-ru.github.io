@@ -9,9 +9,8 @@ title: Архив
 
 <div class="card-list">
 {% for event in outgoing_events %}
-  {% assign workshop = site.workshops | where: "slug", event.slug | first %}
   <article>
-    <p class="text-center fw-bold"><a class="text-black" style="height: 4.5rem; line-height: 1.5" href="{{ event.url |   relative_url }}">{{ event.title }}</a></p>
+    <p class="fw-bold"><a style="height: 4.5rem; line-height: 1.5" href="{{ event.url |   relative_url }}">{{ event.title }}</a></p>
     <p class="small">📅 {{ event.date | date: "%d.%m.%Y" }} ⏰ {{ event.date | date: "%H:%M" }}</p>
     <p class="overflow-hidden" style="height: 4.5rem; line-height: 1.5"><em>{{ event.description }}</em></p>
     <p class="fs-4 text-end price">
@@ -19,8 +18,8 @@ title: Архив
     </p>
     <div class="row">
       {% for educator_slug in event.educators %}
-        {% assign educator = site.educators | where: "slug",   educator_slug | first %}
-        <div class="col text-center">
+        {% assign educator = site.educators | where: "slug", educator_slug | first %}
+        <div class="col">
           <img src="{{ educator.thumbnail }}" alt="{{ educator.title }}" width="90" height="120">
           <p>{{ educator.title }}</p>
         </div>
