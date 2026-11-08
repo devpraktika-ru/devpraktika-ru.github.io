@@ -9,7 +9,7 @@ layout: default
 
 <div class="home-intro" markdown="1">
 
-![Практикумы для программистов](https://github.com/user-attachments/assets/dbd410bd-6927-463b-ad68-f70a17a9425b){: .home-illustration .align-top-with-text width="1200" height="900"}
+![Практикумы для программистов](https://github.com/user-attachments/assets/dbd410bd-6927-463b-ad68-f70a17a9425b){: .align-top-with-text width="1200" height="900"}
 
 Архитектурные воркшопы, лайв-кодинг, быстрое введение в языки программирования — по вечерам и в выходные.
 

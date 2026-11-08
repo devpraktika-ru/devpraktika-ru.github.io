@@ -101,25 +101,19 @@ main .container > :last-child {
   margin-bottom: 0;
 }
 
-.home-illustration {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin-bottom: 1rem;
-}
-
 .home-intro {
   display: flow-root;
 }
 
-img.educator.float-start,
-img.workshop.float-start {
-  width: 33.333%;
-  height: auto;
+p:has(> img.align-top-with-text) {
+  margin: 0;
 }
 
-.align-top-with-text {
-  margin-top: 0.9em;
+img.align-top-with-text {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
 }
 
 .card-list {
@@ -220,20 +214,12 @@ footer {
     max-width: min(1320px, 50vw);
   }
 
-  .home-illustration {
+  img.align-top-with-text {
     float: left;
     width: 50%;
+    margin-top: 0.25em;
     margin-right: 1rem;
     margin-bottom: 0.5rem;
-  }
-
-  img.educator.float-start,
-  img.workshop.float-start {
-    width: 25%;
-  }
-
-  .home-intro > p:has(> .home-illustration) {
-    margin: 0;
   }
 
   .card-list {
