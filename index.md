@@ -26,7 +26,7 @@ layout: default
 {% else %}
   <h2>Ближайшие встречи</h2>
   {% include events.html events=upcoming_events %}
-  <p class="border border-secondary border-dashed p-3">
+  <p>
     Следить за анонсами новых мероприятий можно в нашем <a href="https://t.me/devpraktika_channel">Telegram-канале</a> или на <a href="https://networkly.app/community/devpraktika">networkly</a>.
   </p>
 {% endif %}

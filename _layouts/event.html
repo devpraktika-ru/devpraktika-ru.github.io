@@ -13,7 +13,7 @@ layout: default
         {% else %}
           <li class="breadcrumb-item"><a href="{% link schedule/index.md %}">Расписание</a></li>
         {% endif %}
-        <li class="breadcrumb-item active" aria-current="page">{{ workshop.title }} {{ page.date | date: "%d.%m.%Y" }}</li>
+        <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
       </ol>
     </nav>
   </div>
@@ -21,8 +21,9 @@ layout: default
 
 <div class="row w-100">
   <div class="bg-white col-12">
-    <h1>{{ workshop.title }}</h1>
-    <p class="small">📅 {{ page.date | date: "%d.%m.%Y" }} ⏰ {{ page.date | date: "%H:%M" }}</p>
+    <h1>{{ page.title }}</h1>
+    <p class="small">📅 {{ page.date | date: "%d.%m.%Y" }} ⏰ {{ page.date | date: "%H:%M" }}<br />
+    🧩 {{ workshop.title }}</p>
     {{ page.content | markdownify }}
     {% if page.date < site.time %}
       {% if page.mark %}
