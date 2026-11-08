@@ -17,7 +17,7 @@ title: Практикумы
 <div class="card-list">
 {% for workshop in site.workshops %}
   <article>
-    <p class="fs-5"><a class="text-black" style="height: 4.5rem; line-height: 1.5" href="{{ workshop.url | relative_url }}">{{ workshop.title }}</a></p>
+    <p class="fs-5" style="height: 3rem; line-height: 1.5"><a class="text-black" href="{{ workshop.url | relative_url }}">{{ workshop.title }}</a></p>
     <p><em>{{ workshop.description }}</em></p>
   </article>
 {% endfor %}
