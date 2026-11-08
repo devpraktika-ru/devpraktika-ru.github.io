@@ -20,10 +20,13 @@ layout: default
 
 {% if upcoming_events.size == 0 %}
   <p class="border border-secondary border-dashed p-3">
-    В ближайшее время мероприятий не будет.
-    Не переживайте, следите за нашим расписанием на <a href="https://networkly.app/community/devpraktika">networkly</a>.
+  В ближайшее время мероприятий не будет.
+  Не переживайте, следите за нашим расписанием в нашем <a href="https://t.me/devpraktika_channel">Telegram-канале</a> или на <a href="https://networkly.app/community/devpraktika">networkly</a>.
   </p>
 {% else %}
   <h2>Ближайшие встречи</h2>
   {% include events.html events=upcoming_events %}
+  <p class="border border-secondary border-dashed p-3">
+    Следить за анонсами новых мероприятий можно в нашем <a href="https://t.me/devpraktika_channel">Telegram-канале</a> или на <a href="https://networkly.app/community/devpraktika">networkly</a>.
+  </p>
 {% endif %}
