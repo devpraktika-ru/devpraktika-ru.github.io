@@ -118,6 +118,10 @@ img.workshop.float-start {
   height: auto;
 }
 
+.align-top-with-text {
+  margin-top: 0.3rem;
+}
+
 .card-list {
   display: grid;
   grid-template-columns: 1fr;
