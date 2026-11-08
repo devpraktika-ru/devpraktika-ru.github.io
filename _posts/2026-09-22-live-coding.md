@@ -5,7 +5,7 @@ price: 0
 networkly_id: 6867
 vkvideo: oid=-241467855&id=456239018&hash=4e22b2b17c25b544&hd=3
 youtube: GYXSiz70kvg?si=ObS1kW-07OSR4Tec
-description: Конструкторы, сокрытие данных. Геттеры. День недели. Rata Die. Разность дат. Сложение даты и интервала. Вычисление даты по Rata Die.
+description: Конструкторы, сокрытие данных. Геттеры. День недели. Rata Die. Разность и сумма. Дата по Rata Die.
 educators:
   - mark-shevchenko
 ---
