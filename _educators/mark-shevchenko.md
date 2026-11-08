@@ -2,8 +2,8 @@
 title: Марк Шевченко
 github: markshevchenko
 telegram: markshevchenko
-thumbnail: "https://github.com/user-attachments/assets/97541145-b703-4f1f-9b7b-dd42077df528"
-image: "https://github.com/user-attachments/assets/767bee21-87aa-4d06-8c52-0c00b18fd8db"
+thumbnail: "https://github.com/user-attachments/assets/8f7aafcb-229c-4ba8-84e1-e97c9ae290bb"
+image: "https://github.com/user-attachments/assets/12006134-1aa4-4e1c-8013-4f7ae0990bf4"
 description: "Стаж 30+ лет. Языки: Go, C#, F#, Rust."
 ---
 
