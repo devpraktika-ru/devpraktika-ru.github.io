@@ -1,7 +1,7 @@
 <div class="card-list">
 {% for event in include.events %}
   <article>
-    <p class="fw-bold"><a style="height: 4.5rem; line-height: 1.5" href="{{ event.url | relative_url }}">{{ event.title }}</a></p>
+    <p class="fs-5"><a class="text-black" style="height: 4.5rem; line-height: 1.5" href="{{ event.url | relative_url }}">{{ event.title }}</a></p>
     <p class="small">📅 {{ event.date | date: "%d.%m.%Y" }} ⏰ {{ event.date | date: "%H:%M" }}</p>
     <p class="overflow-hidden" style="height: 4.5rem; line-height: 1.5;"><em>{{ event.description }}</em></p>
     <p class="fs-4 text-end price">
