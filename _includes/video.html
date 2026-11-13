@@ -1,20 +1,20 @@
 <ul class="nav nav-tabs" id="videoTabs" role="tablist">
   {% if page.vkvideo %}
   <li class="nav-item" role="presentation">
-    <button class="nav-link" id="vk-tab"
+    <button class="nav-link active" id="vk-tab"
             data-bs-toggle="tab" data-bs-target="#vk-pane"
             type="button" role="tab"
-            aria-controls="vk-pane" aria-selected="false">
+            aria-controls="vk-pane" aria-selected="true">
       VK Video
     </button>
   </li>
   {% endif %}
   {% if page.youtube %}
   <li class="nav-item" role="presentation">
-    <button class="nav-link active" id="youtube-tab"
+    <button class="nav-link{% unless page.vkvideo %} active{% endunless %}" id="youtube-tab"
             data-bs-toggle="tab" data-bs-target="#youtube-pane"
             type="button" role="tab"
-            aria-controls="youtube-pane" aria-selected="true">
+            aria-controls="youtube-pane" aria-selected="{% if page.vkvideo %}false{% else %}true{% endif %}">
       YouTube
     </button>
   </li>
@@ -23,7 +23,7 @@
 
 <div class="tab-content mt-3" id="videoTabsContent">
   {% if page.vkvideo %}
-  <div class="tab-pane fade" id="vk-pane"
+  <div class="tab-pane fade show active" id="vk-pane"
        role="tabpanel" aria-labelledby="vk-tab">
     <div class="ratio ratio-16x9">
       <iframe src="https://vkvideo.ru/video_ext.php?{{ page.vkvideo }}"
@@ -34,7 +34,7 @@
   </div>
   {% endif %}
   {% if page.youtube %}
-  <div class="tab-pane fade show active" id="youtube-pane"
+  <div class="tab-pane fade{% unless page.vkvideo %} show active{% endunless %}" id="youtube-pane"
        role="tabpanel" aria-labelledby="youtube-tab">
     <div class="ratio ratio-16x9">
       <iframe src="https://www.youtube.com/embed/{{ page.youtube }}"
