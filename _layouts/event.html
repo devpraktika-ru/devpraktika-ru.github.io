@@ -36,16 +36,14 @@ layout: default
       {% if page.mark %}
       <p class="fs-5 text-end">Оценка: {{ page.mark }}</p>
       {% endif %}
-      {% if upcoming_events.size == 0 %}
-        <p>В ближайшее время мероприятий не будет.</p>
-        <p>Не переживайте, следите за нашим расписанием в нашем <a href="tg://resolve?domain=devpraktika_channel">Telegram-канале</a> или на <a href="https://networkly.app/community/devpraktika">networkly</a>.</p>
-      {% else %}
-        <p>Ближайшие встречи:</p>
-        <ul>
-        {% for event in upcoming_events %}
-          <li><a href="{{ event.url | relative_url }}">{{ event.title }} (📅 {{ event.date | date: "%d.%m.%Y" }} ⏰ {{ event.date | date: "%H:%M" }}) {% include enroll.html networkly_id=event.networkly_id %}</a></li>
-        {% endfor %}
-        </ul>
+      {% if upcoming_events.size > 0 %}
+      <p>Вы можете записаться на ближайшие встречи:</p>
+      <ul>
+      {% for event in upcoming_events %}
+        <li>📅 {{ event.date | date: "%d.%m.%Y" }} ⏰ {{ event.date | date: "%H:%M" }} <a href="{{ event.url | relative_url }}">{{ event.title }}</a><br />
+        <a href="https://networkly.app/event/{{ event.networkly_id }}?utm_source=devpraktika.ru&amp;utm_medium=organic&amp;utm_campaign=event_{{ event.networkly_id }}_announcement">Записаться ➤</a></li>
+      {% endfor %}
+      </ul>
         <p>Следить за анонсами новых мероприятий можно в нашем <a href="tg://resolve?domain=devpraktika_channel">Telegram-канале</a> или на <a href="https://networkly.app/community/devpraktika">networkly</a>.</p>
       {% endif %}
       {% include video.html %}
@@ -53,7 +51,7 @@ layout: default
       <div class="row">
         <div class="col-6">
           {% if page.networkly_id %}
-            {% include enroll.html networkly_id=page.networkly_id %}
+          <a class="btn btn-primary" href="https://networkly.app/event/{{ page.networkly_id }}?utm_source=devpraktika.ru&amp;utm_medium=organic&amp;utm_campaign=event_{{ page.networkly_id }}_announcement">Записаться</a>
           {% endif %}
         </div>
         <div class="col-6">
