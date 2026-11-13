@@ -42,7 +42,7 @@ layout: default
       <p>Следующие встречи:</p>
       <ul>
       {% for event in upcoming_events %}
-        <li>📅 {{ event.date | date: "%d.%m.%Y" }} ⏰ {{ event.date | date: "%H:%M" }} <a href="{{ event.url | relative_url }}">{{ event.title }}</a><br />
+        <li><small>📅 {{ event.date | date: "%d.%m.%Y" }} ⏰ {{ event.date | date: "%H:%M" }}</small> <a href="{{ event.url | relative_url }}">{{ event.title }}</a><br />
         <a href="https://networkly.app/event/{{ event.networkly_id }}?utm_source=devpraktika.ru&amp;utm_medium=organic&amp;utm_campaign=event_{{ event.networkly_id }}_announcement">Записаться ➤</a></li>
       {% endfor %}
       </ul>
@@ -51,6 +51,7 @@ layout: default
       <div class="row">
         <div class="col-6">
           {% if page.networkly_id %}
+          <a class="btn btn-primary" href="https://networkly.app/event/{{ page.networkly_id }}?utm_source=devpraktika.ru&amp;utm_medium=organic&amp;utm_campaign=event_{{ page.networkly_id }}_announcement">Записаться</a>
           <a class="btn btn-primary" href="https://networkly.app/event/{{ page.networkly_id }}?utm_source=devpraktika.ru&amp;utm_medium=organic&amp;utm_campaign=event_{{ page.networkly_id }}_announcement">Записаться</a>
           {% endif %}
         </div>
