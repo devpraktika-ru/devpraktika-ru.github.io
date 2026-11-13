@@ -1,6 +1,6 @@
 ---
 date: 2026-09-17T19:30:00+03:00
-title: "Best Time to Buy and Sell Stock и Maximum Width Ramp: решение с TDD на Java"
+title: "Best Time to Buy and Sell Stock, Maximum Width Ramp: решение с TDD на Java"
 price: 0
 networkly_id: 6847
 description: Разбираем задачи 121 и 962 с LeetCode.
