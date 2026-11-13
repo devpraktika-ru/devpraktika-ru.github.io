@@ -4,7 +4,7 @@ title: "Maximum Depth Of Binary Tree, Diameter Of Binary Tree: с TDD на Go"
 price: 0
 networkly_id: 6887
 description: Высота дерева. Диаметр дерева. Длиннейший путь с одинаковыми значениями.
-vkvideo: oid=-241467855&id=456239019
+vkvideo: oid=-241467855&id=456239019&hash=80c728f5bedb8aa2&hd=3
 youtube: UsOf6QMD52s?si=k9czKLeQeqMNoQXd
 educators:
   - anton-stekanov
