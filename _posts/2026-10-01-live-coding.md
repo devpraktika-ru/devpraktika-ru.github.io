@@ -1,19 +1,27 @@
 ---
 date: 2026-10-01T19:00:00+03:00
-title: Работаем с деревьями на Go
+title: "Maximum Depth Of Binary Tree, Diameter Of Binary Tree: с TDD на Go"
 price: 0
 networkly_id: 6887
-description: Высота дерева. Диаметр дерева. Путь с одинаковыми значениями.
-vkvideo: oid=-215758020&id=456239146&hash=29ccc571aeaed23e&hd=3
+description: Высота дерева. Диаметр дерева. Длиннейший путь с одинаковыми значениями.
+vkvideo: oid=-241467855&id=456239019
 youtube: UsOf6QMD52s?si=k9czKLeQeqMNoQXd
 educators:
   - anton-stekanov
 ---
 
-Практика в духе алгоритмических собеседований.
-Обычно нужно за час решить одну задачу уровня LeetCode easy и одну — уровня medium.
+Готовимся к алгоритмическим собеседованиям на практике.
+За час решаем одну задачу уровня easy и одну уровня medium.
 
-Так как мы будем обсуждать идеи и код, по времени мероприятие займёт часа полтора-два.
+Так как мы обсуждаем разные варианты решений, встреча по времени занимает полтора-два часа.
 
-Пишем на **Go**.
+Пишем на **Go**, но этот лайв-кодинг будет полезен и тем, кто пишет языках-неследниках C.
+
+При разработке используем TDD, чтобы лучше разобраться в решении и справиться с возможными ошибками.
+
 Ведущий **Антон Стеканов** — опытный Java-разработчик, успевший поработать (а до этого пройти собеседование) в Яндексе, ТБанке и Mail.ru group.
+
+## Задачи
+* [Maximum Depth Of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/description/)
+* [Diameter Of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/description/)
+* [Longest Univalue Path](https://leetcode.com/problems/longest-univalue-path/description/)
