@@ -4,6 +4,8 @@ title: "Subarray Sum Equals K, Path Sum 3: решение с TDD на Java"
 price: 0
 networkly_id: 7140
 description: Сумма элементов подмассива. Сумма пути, вариант 3.
+vkvideo: oid=-241467855&id=456239024&hash=35f0dbc2b91db2eb&hd=3
+youtube: EIpZX4FHA08?si=FBMRVaj6JN_qY3Td
 educators:
   - anton-stekanov
 ---
@@ -24,7 +26,6 @@ educators:
 
 ## Ссылки
 
-:
 * [GitHub](https://github.com/anton0xf/solutions/blob/main/leetcode/java/)
 
 ## Задачи
@@ -34,4 +35,3 @@ educators:
 Задачи прошлой встречи:
 * [Path Sum 2](https://leetcode.com/problems/path-sum-ii/)
 * [Path Sum 3](https://leetcode.com/problems/path-sum-iii/)
-
