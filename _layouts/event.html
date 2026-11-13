@@ -2,7 +2,14 @@
 layout: default
 ---
 
-{% assign workshop = site.workshops | where: "slug", page.slug | first %}
+{% assign workshop = site.workshops 
+                     | where: "slug", page.slug
+                     | first %}
+{% assign upcoming_events = site.posts
+                          | where_exp: "event", "event.date >= site.time"
+                          | sort: "date"
+                          | slice: 0, 3 %}
+
 
 <div class="row w-100">
   <div class="bg-white col-12">
@@ -29,33 +36,29 @@ layout: default
       {% if page.mark %}
       <p class="fs-5 text-end">Оценка: {{ page.mark }}</p>
       {% endif %}
+      {% if upcoming_events.size == 0 %}
+        <p>В ближайшее время мероприятий не будет.</p>
+        <p>Не переживайте, следите за нашим расписанием в нашем <a href="tg://resolve?domain=devpraktika_channel">Telegram-канале</a> или на <a href="https://networkly.app/community/devpraktika">networkly</a>.</p>
+      {% else %}
+        <p>Ближайшие встречи:</p>
+        <ul>
+        {% for event in include.events %}
+          <li><a href="{{ event.url | relative_url }}">{{ event.title }} (📅 {{ event.date | date: "%d.%m.%Y" }} ⏰ {{ event.date | date: "%H:%M" }}) {% include enroll.html networkly_id=event.networkly_id %}</a></li>
+        {% endfor %}
+        </ul>
+        <p>Следить за анонсами новых мероприятий можно в нашем <a href="tg://resolve?domain=devpraktika_channel">Telegram-канале</a> или на <a href="https://networkly.app/community/devpraktika">networkly</a>.</p>
+      {% endif %}
       {% include video.html %}
     {% else %}
       <div class="row">
         <div class="col-6">
           {% if page.networkly_id %}
-          <form action="https://networkly.app/event/{{ page.networkly_id }}" method="get">
-            <input type="hidden" id="utm_source" name="utm_source" value="devpraktika.ru">
-            <input type="hidden" id="utm_medium" name="utm_medium" value="organic">
-            <input type="hidden" id="utm_campaign" name="utm_campaign" value="event_{{ page.networkly_id }}_announcement">
-            <button class="btn btn-primary" type="submit">Записаться</button>
-          </form>
-          <script>
-            (function() {
-              const params = new URLSearchParams(location.search);
-              ['utm_source', 'utm_medium', 'utm_campaign'].forEach(function(name) {
-                const value = params.get(name);
-                if (value !== null) {
-                  document.getElementById(name).value = value;
-                }
-              });
-            })();
-          </script>
+            {% include enroll.html networkly_id=page.networkly_id %}
           {% endif %}
         </div>
         <div class="col-6">
-          {% if event.price > 0 %}
-          <p class="fs-4 text-end price">{{ event.price }}₽</p>
+          {% if page.price > 0 %}
+          <p class="fs-4 text-end price">{{ page.price }}₽</p>
           {% endif %}
         </div>
       </div>
