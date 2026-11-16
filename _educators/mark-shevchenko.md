@@ -10,7 +10,7 @@ description: "Стаж 30+ лет. Языки: Go, C#, F#, Rust."
 Марк Шевченко занимается программированием больше 30 лет.
 По работе писал на C, Assembler x86, C++, Delphi, Perl, PHP, C#, F# и Go.
 Вне работы освоил ещё десяток языков, среди которых Ruby, Haskell и Rust.
-Организует митапы в [Московском клубе программистов](https://prog.msk.ru).
+Организует встречи [Московского клуба программистов](https://prog.msk.ru).
 
 Был первым вебмастером КАМАЗА, писал игры в Акелле, трудился в Яндексе, Сбере, Т1.
 
@@ -21,7 +21,7 @@ description: "Стаж 30+ лет. Языки: Go, C#, F#, Rust."
 
 Записал курсы «Пишем интернет-магазин на C#» ([vkvideo](https://vkvideo.ru/playlist/-215542858_1)) и «Адресная арифметика» ([vkvideo](https://vkvideo.ru/playlist/-215542858_10)).
 
-Ведёт:
+## Форматы
 * [Архитектурный воркшоп]({% link _workshops/architecture-workshop.md %})
 * [Архитектурная ката]({% link _workshops/architecture-kata.md %})
 * [Лайв-кодинг]({% link _workshops/live-coding.md %})
