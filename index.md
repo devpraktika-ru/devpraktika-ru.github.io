@@ -2,13 +2,14 @@
 layout: default
 ---
 
-{% assign upcoming_events = site.posts | where_exp: "event", "event.date >= site.time" | sort: "date" %}
-{% assign upcoming_events = upcoming_events | slice: 0, 3 %}
+{% assign upcoming_events = site.posts
+                          | where_exp: "event", "event.date >= site.time"
+                          | sort: "date"
+                          | slice: 0, 3 %}
 
 # Практикумы для программистов
 
 <div class="home-intro" markdown="1">
-
 ![Практикумы для программистов](https://github.com/user-attachments/assets/dbd410bd-6927-463b-ad68-f70a17a9425b){: .align-top-with-text width="1200" height="900"}
 
 Архитектурные воркшопы, лайв-кодинг, быстрое введение в языки программирования — по вечерам и в выходные.
@@ -18,6 +19,8 @@ layout: default
 Работаем в малых группах, разбираем задачи и решения участников, отвечаем на вопросы.
 
 У наших ведущих большой практический опыт и — кроме того — статьи на Хабре, видеоуроки в YouTube и десятки воркшопов.
+
+Мы выкладываем видео наших встреч на <a href="https://youtube.com/@devpraktika">YouTube</a> и в <a href="https://vkvideo.ru/@devpraktika">VK Видео</a>.
 </div>
 
 {% if upcoming_events.size == 0 %}
