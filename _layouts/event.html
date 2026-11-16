@@ -34,19 +34,19 @@ layout: default
     {{ page.content | markdownify }}
     {% if page.date < site.time %}
       {% if page.mark %}
-      <p class="fs-5 text-end">Оценка: {{ page.mark }}</p>
-      {% endif %}
+        <p class="fs-5 text-end">Оценка: {{ page.mark }}</p>
       {% endif %}
       {% include video.html %}
       {% if upcoming_events.size > 0 %}
-      <h2>Следующие встречи</h2>
-      <ul>
-      {% for event in upcoming_events %}
-        <li><small class="fw-bold">📅 {{ event.date | date: "%d.%m.%Y" }} ⏰ {{ event.date | date: "%H:%M" }}</small> <a href="{{ event.url | relative_url }}">{{ event.title }}</a><br />
-        <a class="fw-bold" href="https://networkly.app/event/{{ event.networkly_id }}?utm_source=devpraktika.ru&amp;utm_medium=organic&amp;utm_campaign=event_{{ event.networkly_id }}_announcement">Записаться ➤</a></li>
-      {% endfor %}
-      </ul>
-      <p>Чтобы всегда быть в курсе новых воркшопов, курсов и лайв-кодинга, <a href="tg://resolve?domain=devpraktika_channel">подпишитесь</a> на наш канал в Telegram.</p>
+        <h2>Следующие встречи</h2>
+        <ul>
+        {% for event in upcoming_events %}
+          <li><small class="fw-bold">📅 {{ event.date | date: "%d.%m.%Y" }} ⏰ {{ event.date | date: "%H:%M" }}</small> <a href="{{ event.url | relative_url }}">{{ event.title }}</a><br />
+          <a class="fw-bold" href="https://networkly.app/event/{{ event.networkly_id }}?utm_source=devpraktika.ru&amp;utm_medium=organic&amp;utm_campaign=event_{{ event.networkly_id }}_announcement">Записаться ➤</a></li>
+        {% endfor %}
+        </ul>
+        <p>Чтобы всегда быть в курсе новых воркшопов, курсов и лайв-кодинга, <a href="tg://resolve?domain=devpraktika_channel">подпишитесь</a> на наш канал в Telegram.</p>
+      {% endif %}
     {% else %}
       <div class="row">
         <div class="col-6">
