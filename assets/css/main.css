@@ -204,13 +204,7 @@ footer {
 
 .subscribe {
   padding: 1.5rem;
-  border-radius: 0.5rem;
   background-color: rgba(0, 153, 238, 0.08);
-}
-
-.subscribe-title {
-  font-weight: 600;
-  font-size: 1.25rem;
 }
 
 @media (hover: none), (pointer: coarse) {
