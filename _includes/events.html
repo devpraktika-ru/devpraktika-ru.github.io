@@ -8,6 +8,9 @@
     <p class="overflow-hidden" style="height: 6rem; line-height: 1.5;"><em>{{ event.description }}</em></p>
     <p class="fs-4 price">
     {% if event.price > 0 %}{{ event.price }}₽{% else %}бесплатно{% endif %}
+    {% if event.date >= site.time and event.networkly_id %}
+    <a class="btn btn-primary" href="https://networkly.app/event/{{ event.networkly_id }}?utm_source=devpraktika.ru&amp;utm_medium=organic&amp;utm_campaign=event_{{ event.networkly_id }}_announcement">Записаться</a>
+    {% endif %}
     </p>
     <div class="row">
       {% for educator_slug in event.educators %}

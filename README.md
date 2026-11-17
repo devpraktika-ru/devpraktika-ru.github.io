@@ -3,6 +3,7 @@
 Исходный код сайта devpraktika.ru
 
 ## Ссылки
+### Образование
 
 * [Bloom's 2 sigma problem](https://en.wikipedia.org/wiki/Bloom%27s_2_sigma_problem)&nbsp;&mdash;
   Средний ученик, занимавшийся с наставником один на один, показал результаты на два стандартных отклонения (2 сигмы) выше, чем ученики в обычном классе, обогнав 98% сверстников.
@@ -17,3 +18,7 @@
   Однако начиная с 6–8 человек в группе возникают «безбилетники» (social loafing), которые перестают прикладывать усилия.
 * [The Effectiveness of Interactive Videos in Increasing Student Engagement in Online Learning](https://www.researchgate.net/publication/386117703_The_Effectiveness_of_Interactive_Videos_in_Increasing_Student_Engagement_in_Online_Learning)&nbsp;&mdash;
   У «интерактивной» группы результаты итоговых тестов выросли на 28,5% против 15,3% у тех, кто просто смотрел записи.
+
+### ИИ
+* [Ten takeaways from the AI Engineering Report 2026: The Acceleration Whiplash](https://www.faros.ai/blog/ai-acceleration-whiplash-takeaways)&nbsp;&mdash;
+  количество инцидентов на один PR выросло на 242,7%; ежемесячное количество инцидентов&nbsp;&mdash; на 57,9%; баги на разработчика&nbsp;&mdash; на 54%.

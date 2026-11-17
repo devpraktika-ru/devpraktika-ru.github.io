@@ -11,7 +11,7 @@ educators:
 ---
 
 Продолжаем разбирать задачи с деревьями.
-Предыдущие разборы можно посмотреть [здесь](https://devpraktika.ru/events/2026-10-14-live-coding/) (часть I) и [здесь](https://devpraktika.ru/events/2026-10-29-live-coding/) (часть II).
+Предыдущие разборы: [Path Sum и Binary Tree Paths](https://devpraktika.ru/events/2026-10-14-live-coding/) и [Path Sum 2 и Path Sum 3](https://devpraktika.ru/events/2026-10-29-live-coding/).
 
 Готовимся к алгоритмическим собеседованиям на практике.
 За час решаем одну задачу уровня easy и одну уровня medium.

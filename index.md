@@ -23,6 +23,8 @@ layout: default
 Чтобы познакомиться с нашими форматами, смотрите записи наших встреч в <a href="https://youtube.com/@devpraktika">YouTube</a> и в <a href="https://vkvideo.ru/@devpraktika">VK Видео</a>.
 </div>
 
+{% include subscribe.html %}
+
 {% if upcoming_events.size == 0 %}
   <p>В ближайшее время мероприятий не будет.</p>
   <p>Не переживайте, следите за нашим расписанием в нашем <a href="tg://resolve?domain=devpraktika_channel">Telegram-канале</a> или на <a href="https://networkly.app/community/devpraktika">networkly</a>.</p>
