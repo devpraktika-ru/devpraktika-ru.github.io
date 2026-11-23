@@ -3,6 +3,7 @@ date: 2026-12-01T19:30:00+03:00
 title: Забытая корзина
 price: 0
 networkly_id: 7224
+preview: "https://github.com/user-attachments/assets/4ce94989-9952-47fc-a730-e409b36472ce"
 description: Напоминаем покупателю о товарах, которые он оставил в корзине.
 educators:
   - mark-shevchenko
