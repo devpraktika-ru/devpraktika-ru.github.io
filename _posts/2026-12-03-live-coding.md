@@ -3,6 +3,7 @@ date: 2026-12-03T19:30:00+03:00
 title: "Симуляция частиц (Java)"
 price: 0
 networkly_id: 7223
+preview: "https://github.com/user-attachments/assets/d03772ab-cd79-4dc8-9723-e2f22f319b4b"
 description: Разбираемся, как сделать игровой мир похожим на реальный.
 educators:
   - anton-stekanov
