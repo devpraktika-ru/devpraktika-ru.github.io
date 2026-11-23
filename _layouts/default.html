@@ -11,9 +11,8 @@
     {%- if page.description %}
     <meta property="og:description" content="{{ page.description | escape }}" />
     {%- endif %}
-    {%- if page.youtube %}
-    {%- assign youtube_id = page.youtube | split: "?" | first %}
-    <meta property="og:image" content="https://i.ytimg.com/vi/{{ youtube_id }}/maxresdefault.jpg" />
+    {%- if page.preview %}
+    <meta property="og:image" content="{{ page.preview }}" />
     <meta property="og:image:width" content="1280" />
     <meta property="og:image:height" content="720" />
     <meta name="twitter:card" content="summary_large_image" />
