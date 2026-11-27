@@ -45,7 +45,7 @@ input[list] {
 
   <datalist id="campaign-list">
     {% for event in upcoming_events %}
-    <option label="{{ event.date | date: '%Y-%m-%d' }}-{{ event.slug }}" value="event_{{ event.networkly_id }}_announcement" data-url="{{ event.url | absolute_url }}">
+    <option label="{{ event.date | date: '%Y-%m-%d' }}-{{ event.slug }}" value="event_{{ event.networkly_id }}_announcement" data-url="https://networkly.app/event/{{ event.networkly_id }}">
     {% endfor %}
   </datalist>
 </div>
@@ -69,6 +69,30 @@ function updateLink() {
   const url = `${eventUrl}?utm_source=${encodeURIComponent(source)}&utm_medium=${encodeURIComponent(medium)}&utm_campaign=${encodeURIComponent(campaign)}`;
   linkElement.innerHTML = `<a href="${url}" target="_blank">${url}</a>`;
 }
+
+function allowReopeningDatalist(inputId, datalistId) {
+  const input = document.getElementById(inputId);
+  const datalist = document.getElementById(datalistId);
+  let previousValue = '';
+
+  input.addEventListener('focus', () => {
+    previousValue = input.value;
+    const matchesOption = datalist.querySelector(`option[value="${previousValue}"]`);
+    if (matchesOption) {
+      input.value = '';
+    }
+  });
+
+  input.addEventListener('blur', () => {
+    if (!input.value) {
+      input.value = previousValue;
+    }
+  });
+}
+
+allowReopeningDatalist('source', 'source-list');
+allowReopeningDatalist('medium', 'medium-list');
+allowReopeningDatalist('campaign', 'campaign-list');
 
 document.getElementById('source').addEventListener('change', updateLink);
 document.getElementById('medium').addEventListener('change', updateLink);
