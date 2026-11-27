@@ -32,7 +32,7 @@ title: UTM-генератор
 
   <datalist id="campaign-list">
     {% for event in upcoming_events %}
-    <option label="{{ event.date | date: '%Y-%m-%d' }}-{{ event.slug }}" value="event_{{ event.networkly_id }}_announcement">
+    <option label="{{ event.date | date: '%Y-%m-%d' }}-{{ event.slug }}" value="event_{{ event.networkly_id }}_announcement" data-url="{{ event.url | absolute_url }}">
     {% endfor %}
   </datalist>
 </div>
@@ -45,15 +45,15 @@ function updateLink() {
   const campaign = document.getElementById('campaign').value;
   const datalist = document.getElementById('campaign-list');
   const option = datalist.querySelector(`option[value="${campaign}"]`);
-  const link = option ? option.textContent : '';
+  const eventUrl = option ? option.dataset.url : '';
   const linkElement = document.getElementById('link');
 
-  if (!source || !medium || !campaign || !link) {
+  if (!source || !medium || !campaign || !eventUrl) {
     linkElement.innerHTML = '';
     return;
   }
 
-  const url = `https://devpraktika.ru/${slug}/?utm_source=${encodeURIComponent(source)}&utm_medium=${encodeURIComponent(medium)}&utm_campaign=${encodeURIComponent(campaign)}`;
+  const url = `${eventUrl}?utm_source=${encodeURIComponent(source)}&utm_medium=${encodeURIComponent(medium)}&utm_campaign=${encodeURIComponent(campaign)}`;
   linkElement.innerHTML = `<a href="${url}" target="_blank">${url}</a>`;
 }
 

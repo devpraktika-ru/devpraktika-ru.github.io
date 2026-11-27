@@ -304,4 +304,14 @@ footer {
     font-size: 4vh;
     font-size: 4dvh;
   }
+
+  .event-header {
+    height: 4.5rem;
+    line-height: 1.5;
+  }
+
+  .event-description {
+    height: 6rem;
+    line-height: 1.5;
+  }
 }
