@@ -5,6 +5,8 @@ price: 0
 networkly_id: 7222
 preview: "https://github.com/user-attachments/assets/84467ef9-abf2-4d56-90d0-24921384f4f0"
 description: Разбираемся, как L-система превращается в красивую картинку.
+vkvideo: oid=-241467855&id=456239026&hash=337c6e3f039a135b&hd=3
+youtube: kF9e5wCJZmc?si=_L-xY1-R618ZcEsI
 educators:
   - anton-stekanov
 ---
