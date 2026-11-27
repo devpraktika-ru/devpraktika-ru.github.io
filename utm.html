@@ -3,7 +3,19 @@ layout: default
 title: UTM-генератор
 ---
 
-{% assign upcoming_events = site.posts | where_exp: "event", "event.date >= site.time" | sort: "date" %}
+{% assign upcoming_events = site.posts
+                          | where_exp: "event", "event.date >= site.time"
+                          | sort: "date" %}
+
+<style>
+input[list] {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23343a40' d='M8 11 3 6h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px 12px;
+  padding-right: 2.5rem;
+}
+</style>
 
 <div class="mb-3">
   <label for="source">utm_source</label>
@@ -12,10 +24,11 @@ title: UTM-генератор
   <datalist id="source-list">
     <option value="devpraktika.ru">
     <option value="telegram">
+    <option value="tg_devpraktika">
     <option value="tg_progmsk">
     <option value="tg_anton0f">
     <option value="vk_progmsk">
-    <option value="vk_dp">
+    <option value="vk_devpraktika">
     <option value="calendar">
   </datalist>
 
