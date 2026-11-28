@@ -1,0 +1,72 @@
+---
+layout: default
+title: UTM-генератор
+---
+
+{% assign upcoming_events = site.posts
+                          | where_exp: "event", "event.date >= site.time"
+                          | where_exp: "event", "event.networkly_id != nil"
+                          | sort: "date" %}
+
+<div class="mb-3">
+  <div class="mb-3">
+    <label class="form-label" for="source">utm_source</label>
+    <select class="form-select" id="source">
+      <option value="devpraktika.ru">devpraktika.ru</option>
+      <option value="telegram">telegram</option>
+      <option value="tg_devpraktika">tg_devpraktika</option>
+      <option value="tg_progmsk">tg_progmsk</option>
+      <option value="tg_anton0f">tg_anton0f</option>
+      <option value="vk_progmsk">vk_progmsk</option>
+      <option value="vk_devpraktika">vk_devpraktika</option>
+      <option value="calendar">calendar</option>
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label" for="medium">utm_medium</label>
+    <select class="form-select" id="medium">
+      <option value="organic">organic</option>
+      <option value="social">social</option>
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label" for="campaign">utm_campaign</label>
+    <select class="form-select" id="campaign">
+      {% for event in upcoming_events %}
+      <option value="event_{{ event.networkly_id }}_announcement"
+              data-url="https://networkly.app/event/{{ event.networkly_id }}">
+        {{ event.date | date: '%d.%m.%Y' }} — {{ event.title | escape }}
+      </option>
+      {% endfor %}
+    </select>
+  </div>
+</div>
+
+<div id="link"></div>
+
+<script>
+function updateLink() {
+  const source = document.getElementById('source').value;
+  const medium = document.getElementById('medium').value;
+  const campaign = document.getElementById('campaign');
+  const eventUrl = campaign.selectedOptions[0]?.dataset.url ?? '';
+  const linkElement = document.getElementById('link');
+
+  if (!source || !medium || !campaign.value || !eventUrl) {
+    linkElement.innerHTML = '';
+    return;
+  }
+
+  const url = `${eventUrl}?utm_source=${encodeURIComponent(source)}&utm_medium=${encodeURIComponent(medium)}&utm_campaign=${encodeURIComponent(campaign.value)}`;
+  linkElement.href = url;
+  linkElement.innerHTML = url;
+}
+
+document.getElementById('source').addEventListener('change', updateLink);
+document.getElementById('medium').addEventListener('change', updateLink);
+document.getElementById('campaign').addEventListener('change', updateLink);
+
+updateLink();
+</script>
