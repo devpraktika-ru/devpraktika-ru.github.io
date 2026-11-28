@@ -1,0 +1,11 @@
+date,event,slug,networkly_id,format,reach_telegram,reach_vk,page_views,registrations,participants,youtube_views_7d,vk_views_7d,measured_on,notes
+2026-04-04,"Бекенд для торговли ценными бумагами",2026-04-04-architecture-workshop,,workshop,,,,,,,,,"офлайн-воркшоп, записи нет"
+2026-09-17,"Best Time to Buy and Sell Stock, Maximum Width Ramp: решение на Java",2026-09-17-live-coding,6847,live-coding,,,,,,,,,
+2026-09-22,"Алгоритмы для работы с датами на Go",2026-09-22-live-coding,6867,live-coding,,,,,,,,,
+2026-10-01,"Maximum Depth Of Binary Tree, Diameter Of Binary Tree: с TDD на Go",2026-10-01-live-coding,6887,live-coding,,,,,,,,,
+2026-10-14,"Path Sum, Binary Tree Paths: решение с TDD на Java",2026-10-14-live-coding,6984,live-coding,,,,,,,,,
+2026-10-29,"Path Sum 2, Path Sum 3: решение с TDD на Java",2026-10-29-live-coding,7066,live-coding,,,,,,,,,
+2026-11-05,"Построение kD-дерева на Rust + визуализация с помощью WASM",2026-11-05-live-coding,7109,live-coding,,,,,,,,,
+2026-11-12,"Subarray Sum Equals K, Path Sum 3: решение с TDD на Java",2026-11-12-live-coding,7140,live-coding,,,,,,,,,
+2026-11-17,"Поиск в kD-дереве на Rust + визуализация с помощью WASM",2026-11-17-live-coding,7141,live-coding,,,,,,,,,
+2026-11-26,"Фракталы на L-системах (Java)",2026-11-26-live-coding,7222,live-coding,,,,,,,,,"запись опубликована 27.11.2026; окно 7 дней закрывается 04.12.2026"

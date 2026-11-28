@@ -1,0 +1,431 @@
+---
+layout: default
+title: Статистика
+---
+
+<h1>Статистика встреч</h1>
+
+<h2>UTM</h2>
+
+<p><a href="{% link utm.html %}">Генератор</a> UTM-ссылок на мероприятия.</p>
+
+<p>
+  Одна строка <a href="{{ '/stats/stats.csv' | relative_url }}">stats.csv</a> — одна встреча.
+  Таблица ниже собирается в браузере прямо из CSV: поправили CSV — обновили страницу.
+</p>
+
+<p class="small text-muted">
+  Прочерк — метрика ещё не собрана. Комментарии к встречам — в CSV.
+</p>
+
+<div id="stats-table" class="table-responsive" aria-live="polite">
+  <p class="text-muted">Загружаю данные…</p>
+</div>
+
+<p class="small text-muted" id="stats-summary"></p>
+
+<p>
+  <a class="btn btn-outline-primary btn-sm" href="{{ '/stats/stats.csv' | relative_url }}" download>Скачать CSV</a>
+</p>
+
+<noscript>
+  <p class="text-danger">Для отображения таблицы нужен JavaScript.</p>
+</noscript>
+
+<h2>Что и где считать</h2>
+
+<div class="table-responsive">
+  <table class="table table-sm align-middle">
+    <thead class="table-light">
+      <tr>
+        <th scope="col">Поле</th>
+        <th scope="col">Метрика</th>
+        <th scope="col">Где брать</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>reach_telegram</code></td>
+        <td>Просмотры поста-анонса</td>
+        <td>Число с иконкой глаза под постом. Если в канале доступна статистика — Telegram → статистика канала → публикация</td>
+      </tr>
+      <tr>
+        <td><code>reach_vk</code></td>
+        <td>Охват записи</td>
+        <td>VK → статистика записи</td>
+      </tr>
+      <tr>
+        <td><code>page_views</code></td>
+        <td>Заходы на страницу события</td>
+        <td>Яндекс.Метрика → <code>/events/&lt;slug&gt;/</code></td>
+      </tr>
+      <tr>
+        <td><code>registrations</code></td>
+        <td>Регистрации</td>
+        <td>Networkly → событие</td>
+      </tr>
+      <tr>
+        <td><code>participants</code></td>
+        <td>Участники</td>
+        <td>Контур.Толк → отчёт о встрече</td>
+      </tr>
+      <tr>
+        <td><code>youtube_views_7d</code></td>
+        <td>Просмотры записи на YouTube</td>
+        <td>YouTube Studio → Аналитика</td>
+      </tr>
+      <tr>
+        <td><code>vk_views_7d</code></td>
+        <td>Просмотры записи в VK</td>
+        <td>VK Видео → статистика</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p class="small text-muted">
+  Встроенная статистика Telegram включается примерно с 50 подписчиков.
+  Пока её нет, для <code>reach_telegram</code> берём число с иконкой глаза под постом.
+</p>
+
+<h2>Договорённости</h2>
+
+<ul>
+  <li>
+    <strong>Окно — 7 дней.</strong>
+    Охват поста и заходы на страницу считаем за 7 дней после публикации анонса;
+    просмотры записи — за 7 дней после публикации записи.
+    Фиксированное окно нужно, чтобы старые встречи не выигрывали только за счёт возраста.
+  </li>
+  <li>
+    <strong><code>participants</code></strong> — уникальные участники, зашедшие хотя бы раз,
+    а не пиковое число подключений.
+  </li>
+  <li>
+    <strong><code>registrations</code></strong> — все регистрации, включая тех, кто не пришёл.
+  </li>
+  <li>
+    <strong><code>measured_on</code></strong> — дата снятия цифр.
+    Для старых встреч в YouTube Analytics и статистике VK выбираем исторический диапазон,
+    а не текущие значения.
+  </li>
+  <li>
+    Пустая ячейка = ещё не измерено; в таблице будет «—».
+  </li>
+  <li>
+    <strong><code>format</code></strong> (<code>live-coding</code>, <code>workshop</code>, <code>kata</code>)
+    помогает не смешивать форматы при анализе: офлайн-воркшоп и онлайн-разбор — разные истории.
+  </li>
+</ul>
+
+<h2>Почему CSV</h2>
+
+<p>
+  CSV — источник правды: его удобно дополнять, фильтровать, строить сводные таблицы и графики.
+  Страница только читает его и рисует таблицу, поэтому данные не дублируются.
+  Тот же файл можно открыть в Excel или загрузить в дашборд.
+</p>
+
+<p>
+  Чтобы обновить таблицу, отредактируйте
+  <a href="{{ '/stats/stats.csv' | relative_url }}">stats.csv</a>
+  и перезагрузите страницу.
+</p>
+
+<script>
+  (() => {
+    const csvUrl = "{{ '/stats/stats.csv' | relative_url }}";
+    const eventsBase = "{{ '/events/' | relative_url }}";
+    const container = document.getElementById('stats-table');
+    const summary = document.getElementById('stats-summary');
+
+    const numericColumns = [
+      'reach_telegram',
+      'reach_vk',
+      'page_views',
+      'registrations',
+      'participants',
+      'youtube_views_7d',
+      'vk_views_7d',
+    ];
+
+    const columns = [
+      {
+        key: 'date',
+        title: 'Дата',
+        className: 'text-nowrap',
+        render: (row) => escapeHtml(formatDate(row.date)),
+      },
+      {
+        key: 'event',
+        title: 'Встреча',
+        className: '',
+        render: (row) => eventLink(row),
+      },
+      {
+        key: 'reach_telegram',
+        title: 'Охват TG',
+        className: 'text-end text-nowrap',
+        average: 'mean',
+        render: (row) => formatNumber(row.reach_telegram),
+      },
+      {
+        key: 'reach_vk',
+        title: 'Охват VK',
+        className: 'text-end text-nowrap',
+        average: 'mean',
+        render: (row) => formatNumber(row.reach_vk),
+      },
+      {
+        key: 'page_views',
+        title: 'Заходы',
+        className: 'text-end text-nowrap',
+        average: 'mean',
+        render: (row) => formatNumber(row.page_views),
+      },
+      {
+        key: 'registrations',
+        title: 'Регистрации',
+        className: 'text-end text-nowrap',
+        average: 'mean',
+        render: (row) => formatNumber(row.registrations),
+      },
+      {
+        key: 'participants',
+        title: 'Участники',
+        className: 'text-end text-nowrap',
+        average: 'mean',
+        render: (row) => formatNumber(row.participants),
+      },
+      {
+        key: 'youtube_views_7d',
+        title: 'YouTube 7д',
+        className: 'text-end text-nowrap',
+        average: 'mean',
+        render: (row) => formatNumber(row.youtube_views_7d),
+      },
+      {
+        key: 'vk_views_7d',
+        title: 'VK 7д',
+        className: 'text-end text-nowrap',
+        average: 'mean',
+        render: (row) => formatNumber(row.vk_views_7d),
+      },
+      {
+        key: 'attendance',
+        title: 'Доходимость',
+        className: 'text-end text-nowrap',
+        average: 'attendance',
+        render: (row) => formatPercent(row.participants, row.registrations),
+      },
+    ];
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"']/g, (character) => {
+        switch (character) {
+          case '&': return '&amp;';
+          case '<': return '&lt;';
+          case '>': return '&gt;';
+          case '"': return '&quot;';
+          default: return '&#39;';
+        }
+      });
+    }
+
+    function parseCsv(text) {
+      const rows = [];
+      let row = [];
+      let field = '';
+      let inQuotes = false;
+      const source = text.replace(/^\uFEFF/, '');
+
+      for (let i = 0; i < source.length; i += 1) {
+        const character = source[i];
+        if (inQuotes) {
+          if (character === '"') {
+            if (source[i + 1] === '"') {
+              field += '"';
+              i += 1;
+            } else {
+              inQuotes = false;
+            }
+          } else {
+            field += character;
+          }
+        } else if (character === '"') {
+          inQuotes = true;
+        } else if (character === ',') {
+          row.push(field);
+          field = '';
+        } else if (character === '\n') {
+          row.push(field);
+          field = '';
+          rows.push(row);
+          row = [];
+        } else if (character !== '\r') {
+          field += character;
+        }
+      }
+
+      if (field !== '' || row.length > 0) {
+        row.push(field);
+        rows.push(row);
+      }
+
+      return rows.filter((values) => values.some((value) => value.trim() !== ''));
+    }
+
+    function toNumber(value) {
+      const normalized = String(value ?? '').trim().replace(/\s+/g, '').replace(',', '.');
+      if (normalized === '') {
+        return null;
+      }
+      const number = Number(normalized);
+      return Number.isFinite(number) ? number : null;
+    }
+
+    function formatNumber(value) {
+      const number = toNumber(value);
+      return number === null ? '—' : number.toLocaleString('ru-RU');
+    }
+
+    function formatDate(value) {
+      const match = String(value ?? '').trim().match(/^(\d{4})-(\d{2})-(\d{2})$/);
+      return match ? `${match[3]}.${match[2]}.${match[1]}` : '—';
+    }
+
+    function formatPercent(partValue, totalValue) {
+      const part = toNumber(partValue);
+      const total = toNumber(totalValue);
+      if (part === null || total === null || total === 0) {
+        return '—';
+      }
+      return `${Math.round((part / total) * 100)}%`;
+    }
+
+    function eventLink(row) {
+      const title = escapeHtml(row.event ?? '');
+      const slug = String(row.slug ?? '').trim();
+      if (!slug) {
+        return title || '—';
+      }
+      return `<a href="${eventsBase}${encodeURIComponent(slug)}/">${title}</a>`;
+    }
+
+    function renderTable(rows) {
+      const head = columns.map((column) =>
+        `<th scope="col" class="${column.className}">${escapeHtml(column.title)}</th>`
+      ).join('');
+
+      const body = rows.map((row) =>
+        `<tr>${columns.map((column) =>
+          `<td class="${column.className}">${column.render(row)}</td>`
+        ).join('')}</tr>`
+      ).join('');
+
+      return `<table class="table table-sm table-striped table-hover align-middle">
+        <thead class="table-light"><tr>${head}</tr></thead>
+        <tbody>${body}</tbody>
+        <tfoot>${renderAverageRow(rows)}</tfoot>
+      </table>`;
+    }
+
+    function renderAverageRow(rows) {
+      const sums = {};
+      const counts = {};
+
+      rows.forEach((row) => {
+        numericColumns.forEach((key) => {
+          const number = toNumber(row[key]);
+          if (number === null) {
+            return;
+          }
+          sums[key] = (sums[key] ?? 0) + number;
+          counts[key] = (counts[key] ?? 0) + 1;
+        });
+      });
+
+      let participants = 0;
+      let registrations = 0;
+
+      rows.forEach((row) => {
+        const rowParticipants = toNumber(row.participants);
+        const rowRegistrations = toNumber(row.registrations);
+        if (rowParticipants !== null && rowRegistrations !== null) {
+          participants += rowParticipants;
+          registrations += rowRegistrations;
+        }
+      });
+
+      const cells = columns.map((column) => {
+        if (column.key === 'date') {
+          return '<td class="fw-bold">Среднее</td>';
+        }
+        if (column.average === 'mean') {
+          const average = counts[column.key]
+            ? sums[column.key] / counts[column.key]
+            : null;
+          const text = average === null
+            ? '—'
+            : average.toLocaleString('ru-RU', { maximumFractionDigits: 1 });
+          return `<td class="text-end text-nowrap fw-bold">${text}</td>`;
+        }
+        if (column.average === 'attendance') {
+          return `<td class="text-end text-nowrap fw-bold">${formatPercent(participants, registrations)}</td>`;
+        }
+        return '<td></td>';
+      }).join('');
+
+      return `<tr>${cells}</tr>`;
+    }
+
+    function renderSummary(rows) {
+      const total = rows.length * numericColumns.length;
+      let filled = 0;
+
+      rows.forEach((row) => {
+        numericColumns.forEach((key) => {
+          if (toNumber(row[key]) !== null) {
+            filled += 1;
+          }
+        });
+      });
+
+      return `Встреч: ${rows.length}. Заполнено метрик: ${filled} из ${total}. Среднее — по заполненным ячейкам.`;
+    }
+
+    fetch(csvUrl, { cache: 'no-cache' })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+        return response.text();
+      })
+      .then((text) => {
+        const rows = parseCsv(text);
+        if (rows.length < 2) {
+          throw new Error('В CSV нет данных');
+        }
+
+        const header = rows.shift().map((name) => name.trim());
+        const data = rows.map((values) => {
+          const record = {};
+          header.forEach((name, index) => {
+            record[name] = values[index] ?? '';
+          });
+          return record;
+        });
+
+        data.sort((a, b) => String(a.date).localeCompare(String(b.date)));
+
+        container.innerHTML = renderTable(data);
+        summary.textContent = renderSummary(data);
+      })
+      .catch((error) => {
+        container.innerHTML = '<p class="text-danger">Не удалось загрузить <code>stats.csv</code>. ' +
+          'Если вы открыли страницу локально, запустите сайт через Jekyll: ' +
+          'браузер не разрешает читать CSV с <code>file://</code>.</p>';
+        console.error(error);
+      });
+  })();
+</script>
