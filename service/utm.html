@@ -12,22 +12,23 @@ title: UTM-генератор
   <div class="mb-3">
     <label class="form-label" for="source">utm_source</label>
     <select class="form-select" id="source">
-      <option value="devpraktika.ru">devpraktika.ru</option>
-      <option value="telegram">telegram</option>
+      <option value="devpraktika.ru">devpraktika.ru&nbsp;&mdash; сайт</option>
+      <option value="telegram">telegram&nbsp;&mdash; Tg networkly</option>
       <option value="tg_devpraktika">tg_devpraktika</option>
       <option value="tg_progmsk">tg_progmsk</option>
-      <option value="tg_anton0f">tg_anton0f</option>
+      <option value="tg_anton0xf">tg_anton0xf</option>
+      <option value="tg_3g">tg_3g&nbsp;&mdash; Три Дже Дая</option>
       <option value="vk_progmsk">vk_progmsk</option>
       <option value="vk_devpraktika">vk_devpraktika</option>
-      <option value="calendar">calendar</option>
+      <option value="calendar">calendar&nbsp;&mdash; календарь progmsk</option>
     </select>
   </div>
 
   <div class="mb-3">
     <label class="form-label" for="medium">utm_medium</label>
     <select class="form-select" id="medium">
-      <option value="organic">organic</option>
-      <option value="social">social</option>
+      <option value="organic">organic&nbsp;&mdash; сайт</option>
+      <option value="social">social&nbsp;&mdash; Tg или VK</option>
     </select>
   </div>
 
@@ -44,24 +45,19 @@ title: UTM-генератор
   </div>
 </div>
 
-<div id="link"></div>
+<p><a id="link"></a></p>
 
 <script>
 function updateLink() {
-  const source = document.getElementById('source').value;
-  const medium = document.getElementById('medium').value;
+  const source = document.getElementById('source');
+  const medium = document.getElementById('medium');
   const campaign = document.getElementById('campaign');
   const eventUrl = campaign.selectedOptions[0]?.dataset.url ?? '';
   const linkElement = document.getElementById('link');
 
-  if (!source || !medium || !campaign.value || !eventUrl) {
-    linkElement.innerHTML = '';
-    return;
-  }
-
-  const url = `${eventUrl}?utm_source=${encodeURIComponent(source)}&utm_medium=${encodeURIComponent(medium)}&utm_campaign=${encodeURIComponent(campaign.value)}`;
+  const url = `${eventUrl}?utm_source=${encodeURIComponent(source.value)}&utm_medium=${encodeURIComponent(medium.value)}&utm_campaign=${encodeURIComponent(campaign.value)}`;
   linkElement.href = url;
-  linkElement.innerHTML = url;
+  linkElement.textContent = url;
 }
 
 document.getElementById('source').addEventListener('change', updateLink);
