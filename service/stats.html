@@ -5,15 +5,6 @@ title: Статистика
 
 <h1>Статистика встреч</h1>
 
-<p>
-  Одна строка <a href="{{ '/stats/stats.csv' | relative_url }}">stats.csv</a> — одна встреча.
-  Таблица ниже собирается в браузере прямо из CSV: поправили CSV — обновили страницу.
-</p>
-
-<p class="small text-muted">
-  Прочерк — метрика ещё не собрана. Комментарии к встречам — в CSV.
-</p>
-
 <div id="stats-table" class="table-responsive" aria-live="polite">
   <p class="text-muted">Загружаю данные…</p>
 </div>
@@ -43,7 +34,7 @@ title: Статистика
       <tr>
         <td><code>reach_telegram</code></td>
         <td>Просмотры поста-анонса</td>
-        <td>Число с иконкой глаза под постом. Если в канале доступна статистика — Telegram → статистика канала → публикация</td>
+        <td>Число с иконкой глаза под постом.</td>
       </tr>
       <tr>
         <td><code>reach_vk</code></td>
@@ -66,12 +57,12 @@ title: Статистика
         <td>Контур.Толк → отчёт о встрече</td>
       </tr>
       <tr>
-        <td><code>youtube_views_7d</code></td>
+        <td><code>youtube_views</code></td>
         <td>Просмотры записи на YouTube</td>
         <td>YouTube Studio → Аналитика</td>
       </tr>
       <tr>
-        <td><code>vk_views_7d</code></td>
+        <td><code>vk_views</code></td>
         <td>Просмотры записи в VK</td>
         <td>VK Видео → статистика</td>
       </tr>
@@ -114,20 +105,6 @@ title: Статистика
   </li>
 </ul>
 
-<h2>Почему CSV</h2>
-
-<p>
-  CSV — источник правды: его удобно дополнять, фильтровать, строить сводные таблицы и графики.
-  Страница только читает его и рисует таблицу, поэтому данные не дублируются.
-  Тот же файл можно открыть в Excel или загрузить в дашборд.
-</p>
-
-<p>
-  Чтобы обновить таблицу, отредактируйте
-  <a href="{{ '/stats/stats.csv' | relative_url }}">stats.csv</a>
-  и перезагрузите страницу.
-</p>
-
 <script>
   (() => {
     const csvUrl = "{{ '/stats/stats.csv' | relative_url }}";
@@ -141,8 +118,8 @@ title: Статистика
       'page_views',
       'registrations',
       'participants',
-      'youtube_views_7d',
-      'vk_views_7d',
+      'youtube_views',
+      'vk_views',
     ];
 
     const columns = [
@@ -194,14 +171,14 @@ title: Статистика
         render: (row) => formatNumber(row.participants),
       },
       {
-        key: 'youtube_views_7d',
+        key: 'youtube_views',
         title: 'YouTube 7д',
         className: 'text-end text-nowrap',
         average: 'mean',
         render: (row) => formatNumber(row.youtube_views_7d),
       },
       {
-        key: 'vk_views_7d',
+        key: 'vk_views',
         title: 'VK 7д',
         className: 'text-end text-nowrap',
         average: 'mean',

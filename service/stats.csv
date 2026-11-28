@@ -1,4 +1,4 @@
-date,event,slug,networkly_id,format,reach_telegram,reach_vk,page_views,registrations,participants,youtube_views_7d,vk_views_7d,measured_on,notes
+date,event,slug,networkly_id,format,reach_telegram,reach_vk,page_views,registrations,participants,youtube_views,vk_views,measured_on,notes
 2026-04-04,"Бекенд для торговли ценными бумагами",2026-04-04-architecture-workshop,,workshop,,,,,,,,,"офлайн-воркшоп, записи нет"
 2026-09-17,"Best Time to Buy and Sell Stock, Maximum Width Ramp: решение на Java",2026-09-17-live-coding,6847,live-coding,,,,,,,,,
 2026-09-22,"Алгоритмы для работы с датами на Go",2026-09-22-live-coding,6867,live-coding,,,,,,,,,
