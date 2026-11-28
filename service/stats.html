@@ -12,7 +12,7 @@ title: Статистика
 <p class="small text-muted" id="stats-summary"></p>
 
 <p>
-  <a class="btn btn-outline-primary btn-sm" href="{{ '/stats/stats.csv' | relative_url }}" download>Скачать CSV</a>
+  <a class="btn btn-outline-primary btn-sm" href="{{ '/service/stats.csv' | relative_url }}" download>Скачать CSV</a>
 </p>
 
 <noscript>
@@ -107,7 +107,7 @@ title: Статистика
 
 <script>
   (() => {
-    const csvUrl = "{{ '/stats/stats.csv' | relative_url }}";
+    const csvUrl = "{{ '/service/stats.csv' | relative_url }}";
     const eventsBase = "{{ '/events/' | relative_url }}";
     const container = document.getElementById('stats-table');
     const summary = document.getElementById('stats-summary');
