@@ -42,8 +42,8 @@ title: UTM-генератор
 <script>
 function updateLink() {
   const source = document.getElementById('source').value;
-  var medium = 'organic';
-  if (source == 'devpraktika.ru') medium = 'social';
+  var medium = 'social';
+  if (source == 'devpraktika.ru') medium = 'organic';
   const campaign = document.getElementById('campaign');
   const eventUrl = campaign.selectedOptions[0]?.dataset.url ?? '';
   const linkElement = document.getElementById('link');
@@ -54,7 +54,6 @@ function updateLink() {
 }
 
 document.getElementById('source').addEventListener('change', updateLink);
-document.getElementById('medium').addEventListener('change', updateLink);
 document.getElementById('campaign').addEventListener('change', updateLink);
 
 updateLink();
