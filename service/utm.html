@@ -25,14 +25,6 @@ title: UTM-генератор
   </div>
 
   <div class="mb-3">
-    <label class="form-label" for="medium">utm_medium</label>
-    <select class="form-select" id="medium">
-      <option value="organic">organic&nbsp;&mdash; сайт</option>
-      <option value="social">social&nbsp;&mdash; Tg или VK</option>
-    </select>
-  </div>
-
-  <div class="mb-3">
     <label class="form-label" for="campaign">utm_campaign</label>
     <select class="form-select" id="campaign">
       {% for event in upcoming_events %}
@@ -49,13 +41,14 @@ title: UTM-генератор
 
 <script>
 function updateLink() {
-  const source = document.getElementById('source');
-  const medium = document.getElementById('medium');
+  const source = document.getElementById('source').value;
+  var medium = 'organic';
+  if (source == 'devpraktika.ru') medium = 'social';
   const campaign = document.getElementById('campaign');
   const eventUrl = campaign.selectedOptions[0]?.dataset.url ?? '';
   const linkElement = document.getElementById('link');
 
-  const url = `${eventUrl}?utm_source=${encodeURIComponent(source.value)}&utm_medium=${encodeURIComponent(medium.value)}&utm_campaign=${encodeURIComponent(campaign.value)}`;
+  const url = `${eventUrl}?utm_source=${encodeURIComponent(source)}&utm_medium=${encodeURIComponent(medium)}&utm_campaign=${encodeURIComponent(campaign.value)}`;
   linkElement.href = url;
   linkElement.textContent = url;
 }
